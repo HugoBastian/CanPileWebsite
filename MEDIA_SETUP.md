@@ -15,10 +15,12 @@ Create the following folder structure in your bucket:
 
 ```
 /can-pile-media/
-  ├── gallery/          # General clinic photos and videos
-  ├── services/         # Service-specific images (radiology, surgery, etc.)
-  ├── team/             # Team member photos
-  └── hero/             # Hero section background images/videos
+  └── Objects/
+      ├── gallery/          # General clinic photos and videos
+      ├── services/         # Service-specific images (radiology, surgery, etc.)
+      ├── team/             # Team member photos
+      ├── logos/            # Logo files
+      └── hero/             # Hero section background images/videos
 ```
 
 ### Step 3: Upload from Google Drive
@@ -35,9 +37,9 @@ After creating your bucket, set the environment variable:
 1. Go to **Tools** → **Secrets**
 2. Add a new secret:
    - Key: `PUBLIC_OBJECT_SEARCH_PATHS`
-   - Value: `/can-pile-media`
+   - Value: `/can-pile-media/Objects`
    
-   (Note: This points to your bucket root - the components will handle the folder paths automatically)
+   (Note: Replit App Storage stores files in an `Objects` folder within your bucket)
 
 ## File Naming Convention
 

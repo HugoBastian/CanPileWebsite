@@ -108,7 +108,12 @@ The website includes the following sections:
 
 ## Next Steps to Complete Media Integration
 1. Create an App Storage bucket in Replit (Tools → Object Storage)
-2. Set the `PUBLIC_OBJECT_SEARCH_PATHS` environment variable
-3. Upload photos/videos from Google Drive to appropriate folders
+2. Set the `PUBLIC_OBJECT_SEARCH_PATHS` environment variable to `/can-pile-media/Objects`
+3. Upload photos/videos from Google Drive to appropriate folders (within Objects/)
 4. Integrate MediaImage and MediaGallery components into CanPileWireframe
 5. Update mediaLibrary.json with actual filenames after upload
+
+## Important: App Storage File Structure
+- Replit App Storage automatically creates an `Objects` folder within your bucket
+- All files should be uploaded to subfolders inside `Objects/`
+- Example path: `can-pile-media/Objects/logos/Logo-blanc.webp`

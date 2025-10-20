@@ -9,7 +9,7 @@ export default function CanPileWireframe() {
           <div className="flex items-center gap-3">
             <MediaImage 
               category="logos" 
-              filename="Logo-Blanc.webp" 
+              filename="Logo-blanc.webp" 
               alt="Can Pilé Logo" 
               className="w-10 h-10 object-contain"
             />
@@ -181,7 +181,7 @@ export default function CanPileWireframe() {
           <div>
             <MediaImage 
               category="logos" 
-              filename="Logo-Blanc.webp" 
+              filename="Logo-blanc.webp" 
               alt="Can Pilé Logo" 
               className="w-12 h-12 object-contain mb-3 bg-[#227461] rounded-full p-2"
             />
