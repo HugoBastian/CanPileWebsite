@@ -1,0 +1,179 @@
+Core principles & constraints
+
+Clean, minimal, readable: Let whitespace breathe. Use fewer but stronger images / videos rather than a barrage of them.
+
+Responsive-first (mobile / tablet / desktop): Design from small screens upward.
+
+Performance-conscious: Lazy-load images & videos, optimize media (compress, WebP, etc).
+
+Clear navigation & structure: Logical menu, section segmentation, breadcrumbing if needed.
+
+Strong CTAs & conversion flow: E.g., “Book Appointment,” “Contact,” “Emergency,” etc.
+
+SEO-friendly: Each major service should have its own route (URL) so search engines can index them.
+
+Accessibility: Contrast, alt texts, legible fonts, keyboard nav, etc.
+
+Brand consistency / visual identity: Use a consistent color palette, typography, iconography.
+
+Suggested high-level site structure
+
+Rather than a single “scroll” page, consider a hybrid: a landing / home page + sub-pages. Something like:
+
+Home / Landing page
+
+Hero section (strong image or video background, overlay with headline + CTA “Book Appointment”)
+
+Short intro / mission
+
+Quick links or “Our Services” teasers
+
+Maybe a small gallery or featured images
+
+Testimonials / trust signals (e.g. client reviews, associations)
+
+Contact / footer summary
+
+About / Nosaltres
+
+Clinic history, mission, values
+
+Team / staff with photos & bios
+
+Facilities & infrastructure (images, lab, equipment)
+
+Services (or multiple sub-pages under a services section)
+
+Each major service (e.g. Radiologia, Oncologia, Ecografía, Cirugía, Laboratorio, etc.) has its own page or at least a well-structured section.
+
+For each: what it is, why it matters, process, machinery, FAQs, etc.
+
+Intersperse related visuals (photos, infographics)
+
+Videos / Media / Gallery
+
+A dedicated gallery / media page (with images and videos) rather than embedding background videos everywhere.
+
+Use thumbnails or a lightbox for videos; don’t autoplay behind text everywhere.
+
+Contact / Location / Hours
+
+Map embed (Google Maps or similar)
+
+Address, phone, email, opening schedule
+
+Contact form (simple, validated)
+
+Emergency / urgent contact (if applicable)
+
+Blog / News / Resources (optional but useful)
+
+Articles about pet health, preventative care, tips
+
+Helps SEO, draws returning visitors
+
+Booking / Appointment / Cita Prèvia
+
+A page or modal / integration (or link out) for clients to request or schedule appointments (if you have a booking system).
+
+If not full booking, at least a “Request Appointment” form.
+
+Footer (global)
+
+Quick links to major pages
+
+Social media links
+
+Address and contact summary
+
+Legal links (privacy, terms)
+
+Maybe a mini-sitemap
+
+You can still include a “scrollable” layout on the home page with anchored sections, but don’t force all content into one scroll page.
+
+Design / visual & UX recommendations
+
+Here’s what to watch out for / incorporate:
+
+Header / Navigation
+
+Use a “sticky but minimal” header: maybe slim when scrolled, or hide on scroll-down and show on scroll-up.
+
+Avoid letting header cover too much vertical space.
+
+Use anchor links on the home page but also have full navigation for subpages.
+
+On mobile: collapsible hamburger menu with clear labeling.
+
+Hero section
+
+Use one strong image or short muted video + overlay with an attention-grabbing headline (“Clínica Veterinària Can Pilé – Medicina Avançada per a mascotes”) + primary CTA (“Demana cita”, “Contacta”, etc.)
+
+Be careful with contrast: if video is behind text, overlay a semi-transparent dark layer to ensure readability.
+
+Content hierarchy & typography
+
+Use heading hierarchy (H1, H2, H3) properly.
+
+Use readable fonts (sans-serif, sizes adapt for mobile).
+
+Keep paragraphs short; use bulleted lists, icons where appropriate.
+
+Use visual separators (colored bands, alternating backgrounds, etc.) to delineate sections.
+
+Images & videos
+
+Curate a selection of high-quality images; avoid too many duplicates or filler.
+
+Use lazy loading (load images/videos only when in viewport).
+
+Use image formats like WebP or compressed JPG.
+
+For videos: use a poster frame and only auto-play where appropriate (or none). Maybe allow user control.
+
+Avoid text over busy image backgrounds; if you must, darken/lighten the image or add translucent overlay.
+
+CTAs & interactive elements
+
+Every page should have a CTA to contact / request appointment.
+
+Use buttons rather than text links.
+
+On hover / focus states, add subtle animations (scale, shadow, color change).
+
+Use indicator of active section (if anchored) in the nav (highlight which section you’re on).
+
+Performance & loading
+
+Minimize initial payload: only load what’s needed immediately.
+
+Use “defer” or “async” for JS.
+
+Compress CSS / bundle / tree-shake.
+
+Use caching / CDN for static assets.
+
+Consider alternate versions (mobile images) to reduce bandwidth.
+
+SEO & routing
+
+Give each service a distinct URL (/servicios/radiologia, /servicios/oncolgia, etc.).
+
+Use meta tags, alt texts for images, structured data (e.g. LocalBusiness, Veterinarian) where possible.
+
+Use proper <title>, <description>, OpenGraph tags, etc.
+
+Use internal links (e.g. from service pages link to related ones).
+
+Accessibility
+
+Ensure color contrast meets standards (WCAG).
+
+Alt text for images
+
+Keyboard navigable menu
+
+Proper form labeling
+
+Responsive / scalable font sizes
