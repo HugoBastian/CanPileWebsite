@@ -1,0 +1,84 @@
+{
+  "gallery": [
+    {
+      "type": "image",
+      "category": "gallery",
+      "filename": "clinic-exterior.jpg",
+      "alt": "Can Pilé Clinic Exterior"
+    },
+    {
+      "type": "image",
+      "category": "gallery",
+      "filename": "reception-area.jpg",
+      "alt": "Clinic Reception Area"
+    },
+    {
+      "type": "image",
+      "category": "gallery",
+      "filename": "surgery-room.jpg",
+      "alt": "Surgery Room"
+    },
+    {
+      "type": "image",
+      "category": "gallery",
+      "filename": "waiting-room.jpg",
+      "alt": "Waiting Room"
+    }
+  ],
+  "services": {
+    "radiologia": {
+      "type": "image",
+      "category": "services",
+      "filename": "radiology-equipment.jpg",
+      "alt": "Digital Radiology Equipment"
+    },
+    "ecografia": {
+      "type": "image",
+      "category": "services",
+      "filename": "ultrasound-machine.jpg",
+      "alt": "Ultrasound Machine"
+    },
+    "cirurgia": {
+      "type": "image",
+      "category": "services",
+      "filename": "surgery-equipment.jpg",
+      "alt": "Surgery Equipment"
+    },
+    "laboratori": {
+      "type": "image",
+      "category": "services",
+      "filename": "laboratory.jpg",
+      "alt": "Veterinary Laboratory"
+    },
+    "oncologia": {
+      "type": "image",
+      "category": "services",
+      "filename": "oncology-equipment.jpg",
+      "alt": "Oncology Treatment Equipment"
+    }
+  },
+  "team": [
+    {
+      "name": "Ester Sarto Jorba",
+      "role": "Veterinària",
+      "type": "image",
+      "category": "team",
+      "filename": "ester-sarto.jpg",
+      "alt": "Dr. Ester Sarto Jorba"
+    },
+    {
+      "name": "Diana Gambarte",
+      "role": "Auxiliar veterinària i perruquera canina",
+      "type": "image",
+      "category": "team",
+      "filename": "diana-gambarte.jpg",
+      "alt": "Diana Gambarte"
+    }
+  ],
+  "hero": {
+    "type": "video",
+    "category": "hero",
+    "filename": "clinic-hero.mp4",
+    "alt": "Can Pilé Clinic Video"
+  }
+}

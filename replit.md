@@ -11,10 +11,18 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 - **Status**: Wireframe/Mockup stage
 
 ## Recent Changes
+- **October 20, 2025**:
+  - Integrated Replit App Storage for media management (photos/videos)
+  - Created backend server infrastructure with Express
+  - Built media display components (MediaImage, MediaVideo, MediaGallery)
+  - Created media library data structure (JSON-based)
+  - Added CORS support and API proxy configuration
+  - Created comprehensive media setup documentation (MEDIA_SETUP.md)
+  
 - **October 17, 2025**: 
   - Imported GitHub project to Replit
   - Set up complete React/Vite development environment
-  - Configured Vite to work with Replit proxy (host: 0.0.0.0, port: 5000)
+  - Configured Vite to work with Replit proxy (host: 0.0.0.0, port: 5000, allowedHosts: true)
   - Integrated existing JSX component into proper React project structure
   - Configured workflow for development server
   - Set up deployment configuration for autoscale
@@ -26,19 +34,34 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 - **Build Tool**: Vite 7.1.10
 - **Styling**: Tailwind CSS 4.1.14
 - **Dev Server**: Vite dev server on port 5000
+- **Backend**: Express 5.1.0 (port 3001)
+- **Media Storage**: Replit App Storage (Google Cloud Storage)
+- **TypeScript Runtime**: tsx 4.20.6
 
 ### Directory Structure
 ```
 /
 ├── src/
-│   ├── CanPileWireframe.jsx   # Main component with all website sections
+│   ├── components/
+│   │   ├── MediaImage.jsx      # Image component with lazy loading
+│   │   ├── MediaVideo.jsx      # Video component with controls
+│   │   └── MediaGallery.jsx    # Gallery grid component
+│   ├── data/
+│   │   └── mediaLibrary.json   # Media metadata and references
+│   ├── CanPileWireframe.jsx    # Main component with all website sections
 │   ├── main.jsx                # React entry point
 │   ├── App.jsx                 # App wrapper component
 │   └── index.css               # Tailwind imports
+├── server/
+│   ├── index.ts                # Express server entry point
+│   ├── routes.ts               # API routes for media serving
+│   ├── objectStorage.ts        # App Storage service
+│   └── objectAcl.ts            # Access control for storage
 ├── index.html                  # HTML entry point
-├── vite.config.js              # Vite configuration (with Replit proxy settings)
+├── vite.config.js              # Vite configuration (with proxy and Replit settings)
 ├── tailwind.config.js          # Tailwind configuration
 ├── postcss.config.js           # PostCSS configuration
+├── MEDIA_SETUP.md              # Media upload and configuration guide
 └── package.json                # Dependencies and scripts
 ```
 
@@ -57,9 +80,18 @@ The website includes the following sections:
 11. **Footer**: Site links and social media
 
 ### Development
-- Run `npm run dev` to start development server on port 5000
+- Run `npm run dev` to start frontend server on port 5000
+- Run `npm run dev:backend` to start backend server on port 3001
+- Run `npm run dev:all` to start both servers concurrently
 - Run `npm run build` to create production build
 - Run `npm run preview` to preview production build
+
+### Media Management
+- Media files are stored in Replit App Storage
+- Upload files through the App Storage UI in Replit Tools panel
+- Organize files in folders: `gallery/`, `services/`, `team/`, `hero/`
+- See `MEDIA_SETUP.md` for detailed upload instructions
+- React components automatically fetch and display media from storage
 
 ### Deployment
 - Configured for autoscale deployment
@@ -67,7 +99,16 @@ The website includes the following sections:
 - Run command: `npx vite preview --host 0.0.0.0 --port 5000`
 
 ## Notes
-- This is a wireframe/mockup with placeholder content
-- All media (images, videos) are represented with dashed border placeholders
+- This is a wireframe/mockup transitioning to a functional website
+- Media (images, videos) can be uploaded via Replit App Storage
+- Ready-to-use media components for displaying photos and videos
 - Text content is in Catalan
 - The design uses a neutral color scheme with responsive layout
+- Backend server configured but currently optional for basic media serving
+
+## Next Steps to Complete Media Integration
+1. Create an App Storage bucket in Replit (Tools → Object Storage)
+2. Set the `PUBLIC_OBJECT_SEARCH_PATHS` environment variable
+3. Upload photos/videos from Google Drive to appropriate folders
+4. Integrate MediaImage and MediaGallery components into CanPileWireframe
+5. Update mediaLibrary.json with actual filenames after upload
