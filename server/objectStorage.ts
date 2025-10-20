@@ -42,8 +42,11 @@ export class ObjectStorageService {
   constructor() {}
 
   getPublicObjectSearchPaths(): Array<string> {
-    const pathsStr = process.env.PUBLIC_OBJECT_SEARCH_PATHS || "";
-    const paths = Array.from(
+    // Use the actual bucket ID from .replit config
+    const defaultBucketId = "/replit-objstore-42bf5c07-636d-4dec-99f1-fa4165ee1d4b";
+    const pathsStr = process.env.PUBLIC_OBJECT_SEARCH_PATHS || defaultBucketId;
+    
+    let paths = Array.from(
       new Set(
         pathsStr
           .split(",")
@@ -51,12 +54,24 @@ export class ObjectStorageService {
           .filter((path) => path.length > 0)
       )
     );
+    
+    // Fix paths that have unnecessary /Objects suffix or incorrect bucket names
+    paths = paths.map(path => {
+      if (path.endsWith('/Objects')) {
+        path = path.slice(0, -8); // Remove /Objects suffix
+      }
+      // Replace old bucket name with correct one
+      if (path.includes('can-pile-media')) {
+        return defaultBucketId;
+      }
+      return path;
+    });
+    
     if (paths.length === 0) {
-      throw new Error(
-        "PUBLIC_OBJECT_SEARCH_PATHS not set. Create a bucket in 'Object Storage' " +
-          "tool and set PUBLIC_OBJECT_SEARCH_PATHS env var (comma-separated paths)."
-      );
+      // Fallback to default bucket ID
+      paths = [defaultBucketId];
     }
+    
     return paths;
   }
 
