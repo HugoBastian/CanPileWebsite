@@ -1,14 +1,21 @@
+import { MediaImage } from './components/MediaImage';
+
 export default function CanPileWireframe() {
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* Header / Navigation */}
-      <header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-neutral-200">
+      <header className="sticky top-0 z-50 backdrop-blur bg-[#227461]/95 border-b border-[#227461]">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-neutral-200 flex items-center justify-center text-xs uppercase">Logo</div>
-            <span className="font-semibold tracking-wide">Clínica Veterinària Can Pilé</span>
+            <MediaImage 
+              category="logos" 
+              filename="Logo-Blanc.webp" 
+              alt="Can Pilé Logo" 
+              className="w-10 h-10 object-contain"
+            />
+            <span className="font-semibold tracking-wide text-white">Clínica Veterinària Can Pilé</span>
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
+          <nav className="hidden md:flex items-center gap-6 text-sm text-white">
             <a href="#hero" className="hover:underline">Inici</a>
             <a href="#services" className="hover:underline">Serveis</a>
             <a href="#gallery" className="hover:underline">Galeria</a>
@@ -16,7 +23,7 @@ export default function CanPileWireframe() {
             <a href="#contact" className="hover:underline">Contacte</a>
             <a href="#hours" className="hover:underline">Horari</a>
           </nav>
-          <button className="md:hidden px-3 py-2 border rounded-lg text-sm">Menu</button>
+          <button className="md:hidden px-3 py-2 border border-white text-white rounded-lg text-sm">Menu</button>
         </div>
       </header>
 
@@ -33,8 +40,8 @@ export default function CanPileWireframe() {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Cura veterinària propera i avançada</h1>
             <p className="mt-3 md:mt-4 text-neutral-600 max-w-2xl mx-auto">Missatge breu de valor. 1–2 frases màxim. Overline/CTA clar.</p>
             <div className="mt-6 flex items-center justify-center gap-3">
-              <button className="px-5 py-3 rounded-xl bg-neutral-900 text-white text-sm">Demana cita</button>
-              <button className="px-5 py-3 rounded-xl border text-sm">Truca</button>
+              <button className="px-5 py-3 rounded-xl bg-[#227461] text-white text-sm hover:bg-[#1a5a4a] transition-colors">Demana cita</button>
+              <button className="px-5 py-3 rounded-xl border border-[#227461] text-[#227461] text-sm hover:bg-[#227461] hover:text-white transition-colors">Truca</button>
             </div>
           </div>
         </div>
@@ -57,7 +64,7 @@ export default function CanPileWireframe() {
             <h2 className="text-2xl md:text-3xl font-semibold">Sobre la clínica</h2>
             <p className="mt-3 text-neutral-600">Breu introducció (80–120 paraules). Enllaç a pàgina “Nosaltres” amb més detall.</p>
             <div className="mt-5">
-              <a href="#about" className="underline">Més sobre nosaltres →</a>
+              <a href="#about" className="text-[#227461] underline hover:text-[#1a5a4a]">Més sobre nosaltres →</a>
             </div>
           </div>
         </div>
@@ -68,7 +75,7 @@ export default function CanPileWireframe() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-end justify-between">
             <h2 className="text-2xl md:text-3xl font-semibold">Serveis</h2>
-            <a className="text-sm underline" href="#">Veure tots els serveis</a>
+            <a className="text-sm text-[#227461] underline hover:text-[#1a5a4a]" href="#">Veure tots els serveis</a>
           </div>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {["Radiologia", "Ecografia", "Cirurgia", "Laboratori", "Oncologia", "Altres especialitats"].map((s) => (
@@ -76,7 +83,7 @@ export default function CanPileWireframe() {
                 <div className="h-36 rounded-xl border-2 border-dashed mb-4 grid place-items-center text-xs text-neutral-500">Foto / vídeo (lazy)</div>
                 <h3 className="font-semibold">{s}</h3>
                 <p className="text-sm text-neutral-600 mt-1">Descripció breu de 2–3 línies. Botó per a més info.</p>
-                <button className="mt-4 text-sm underline">Saber-ne més</button>
+                <button className="mt-4 text-sm text-[#227461] underline hover:text-[#1a5a4a]">Saber-ne més</button>
               </div>
             ))}
           </div>
@@ -161,7 +168,7 @@ export default function CanPileWireframe() {
               <input className="border rounded-lg px-4 py-3" placeholder="Nom" />
               <input className="border rounded-lg px-4 py-3" placeholder="Email" />
               <textarea className="border rounded-lg px-4 py-3 h-28" placeholder="Missatge" />
-              <button className="px-5 py-3 rounded-xl bg-neutral-900 text-white text-sm w-max">Envia</button>
+              <button className="px-5 py-3 rounded-xl bg-[#227461] text-white text-sm w-max hover:bg-[#1a5a4a] transition-colors">Envia</button>
             </div>
           </div>
           <div className="rounded-2xl border-2 border-dashed p-6 grid place-items-center text-neutral-500">Espai per a foto/ vídeo ambient clinic</div>
@@ -172,7 +179,12 @@ export default function CanPileWireframe() {
       <footer className="py-10 border-t bg-white">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm">
           <div>
-            <div className="w-12 h-12 rounded-full bg-neutral-200 mb-3" />
+            <MediaImage 
+              category="logos" 
+              filename="Logo-Blanc.webp" 
+              alt="Can Pilé Logo" 
+              className="w-12 h-12 object-contain mb-3 bg-[#227461] rounded-full p-2"
+            />
             <p className="text-neutral-600">© {new Date().getFullYear()} Can Pilé</p>
           </div>
           <div>

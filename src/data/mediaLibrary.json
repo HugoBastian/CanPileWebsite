@@ -1,4 +1,10 @@
 {
+  "logos": {
+    "type": "image",
+    "category": "logos",
+    "filename": "Logo-Blanc.webp",
+    "alt": "Can Pilé Veterinary Clinic Logo"
+  },
   "gallery": [
     {
       "type": "image",
