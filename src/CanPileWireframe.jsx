@@ -95,7 +95,12 @@ export default function CanPileWireframe() {
       {/* Intro */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
-          <div className="aspect-[4/3] rounded-2xl border-2 border-dashed" />
+          <MediaImage 
+            category="services" 
+            filename="Clinica-desde-el-frente.webp" 
+            alt="Clínica Veterinària Can Pilé" 
+            className="aspect-[4/3] rounded-2xl object-cover w-full"
+          />
           <div>
             <h2 id="about" className="text-2xl md:text-3xl font-semibold">Sobre la nostra clínica</h2>
             <p className="mt-3 text-neutral-600">Situada al Carrer Verge de la Salut, 7, a Santa Eulàlia de Ronçana, la nostra clínica està equipada amb una gran varietat de serveis veterinaris, radiologia digital, cirurgia amb aparells d'anestèsia ventilatòria d'última generació, laboratori veterinari, serveis de traumatologia, ecografies i ecocardiografies per part d'especialistes, oncologia, esterilitzacions, sala d'acomiadament. Tot perquè la seva mascota pugui ser atesa pel nostre equip clínic.</p>
@@ -114,10 +119,22 @@ export default function CanPileWireframe() {
             <a className="text-sm text-[#227461] underline hover:text-[#1a5a4a]" href="#">Veure tots els serveis</a>
           </div>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {["Radiologia", "Ecografia", "Cirurgia", "Laboratori", "Oncologia", "Altres especialitats"].map((s) => (
-              <div key={s} className="rounded-2xl border-2 border-dashed p-5">
-                <div className="h-36 rounded-xl border-2 border-dashed mb-4 grid place-items-center text-xs text-neutral-500">Foto / vídeo (lazy)</div>
-                <h3 className="font-semibold">{s}</h3>
+            {[
+              { name: "Radiologia", image: "Radiologia.webp" },
+              { name: "Ecografia", image: "Ecografia.webp" },
+              { name: "Cirurgia", image: "Cirurgia.webp" },
+              { name: "Laboratori", image: "Labratoria.webp" },
+              { name: "Oncologia", image: "BlueLight.webp" },
+              { name: "Altres especialitats", image: "EsterConPerro.webp" }
+            ].map((service) => (
+              <div key={service.name} className="rounded-2xl border p-5 bg-white hover:shadow-lg transition-shadow">
+                <MediaImage 
+                  category="services" 
+                  filename={service.image} 
+                  alt={service.name} 
+                  className="h-36 rounded-xl mb-4 object-cover w-full"
+                />
+                <h3 className="font-semibold">{service.name}</h3>
                 <p className="text-sm text-neutral-600 mt-1">Descripció breu de 2–3 línies. Botó per a més info.</p>
                 <button className="mt-4 text-sm text-[#227461] underline hover:text-[#1a5a4a]">Saber-ne més</button>
               </div>
@@ -132,8 +149,21 @@ export default function CanPileWireframe() {
           <h2 className="text-2xl md:text-3xl font-semibold">Galeria</h2>
           <p className="text-neutral-600 mt-2">Imatges i vídeos destacats de la clínica i els pacients. Lightbox / modal en producció.</p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {Array.from({length:8}).map((_, i) => (
-              <div key={i} className="aspect-square rounded-2xl border-2 border-dashed" />
+            {[
+              "recepció can pilé.webp",
+              "can pilé con braco.webp",
+              "JefePerro.webp",
+              "PerroFeliz.webp",
+              "PerroFeliz2.webp",
+              "can pile perro en despacho.webp"
+            ].map((img, i) => (
+              <MediaImage 
+                key={i}
+                category="gallery" 
+                filename={img} 
+                alt={`Galeria ${i + 1}`} 
+                className="aspect-square rounded-2xl object-cover w-full hover:scale-105 transition-transform cursor-pointer"
+              />
             ))}
           </div>
         </div>
@@ -160,11 +190,20 @@ export default function CanPileWireframe() {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Equip</h2>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {["Veterinari/a", "Auxiliar", "Especialista"].map((role, i) => (
-              <div key={i} className="rounded-2xl border p-5">
-                <div className="aspect-[4/3] rounded-xl border-2 border-dashed mb-4" />
-                <h3 className="font-semibold">Nom i cognoms</h3>
-                <p className="text-sm text-neutral-500">{role}</p>
+            {[
+              { name: "Ester", role: "Veterinària", image: "EsterConGato.webp" },
+              { name: "Dana", role: "Auxiliar", image: "DanaConPerro.webp" },
+              { name: "Equip", role: "Especialistes", image: "EsterYDana2.webp" }
+            ].map((member, i) => (
+              <div key={i} className="rounded-2xl border p-5 bg-white hover:shadow-lg transition-shadow">
+                <MediaImage 
+                  category="team" 
+                  filename={member.image} 
+                  alt={member.name} 
+                  className="aspect-[4/3] rounded-xl mb-4 object-cover w-full"
+                />
+                <h3 className="font-semibold">{member.name}</h3>
+                <p className="text-sm text-neutral-500">{member.role}</p>
                 <p className="text-sm text-neutral-600 mt-2">Bio breu de 2–3 línies.</p>
               </div>
             ))}
