@@ -12,6 +12,15 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 
 ## Recent Changes
 - **October 21, 2025**:
+  - Implemented interactive gallery lightbox/modal with full keyboard accessibility (ESC to close)
+  - Changed hero "Truca" button to scroll to About section, renamed to "Sobre nosaltres"
+  - Added visual divider border between hero and about sections
+  - Updated team section to 2 members: Ester Sarto Jorba and Diana Gambarte with full professional bios
+  - Updated team photos to EsterConPerro.webp and DanaConPerro4.webp
+  - Changed "Més sobre nosaltres" button to "Coneix el nostre equip" linking to team section
+  - Updated service images: Cirurgia uses Cirurgia2.webp, Altres especialitats uses Telescope.webp
+  - Updated gallery with 7 specific images + 1 video (BrownLabVid.MP4.webm)
+  - Added customer reviews section with 4.4-star average rating and 3 testimonials
   - Implemented hero.mp4 video as autoplay background in hero section
   - Updated business hours to accurate schedule (Mon & Thu: 09:30–14:30, 17:00–19:30; Tue/Wed/Fri: 09:30–14:30; Sat & Sun: Closed)
   - Updated all contact information throughout site (Carrer Verge de la Salut, 7; Phone: 938 446 939; Email: vetcanpile@hotmail.es)
@@ -19,7 +28,6 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
   - Removed association badges section (not applicable)
   - Removed contact form (appointments by phone only)
   - Implemented working Google Maps embed with clinic location coordinates
-  - Made all hero buttons functional (call to action links to phone)
   - Made footer "Nosaltres" link navigate to "Sobre la clínica" section
 
 - **October 20, 2025**:
@@ -79,12 +87,12 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 ### Website Sections
 The website includes the following sections:
 1. **Header/Navigation**: Sticky header with logo, navigation menu, and social media icons (Instagram, Facebook)
-2. **Hero Section**: Full-screen hero with hero.mp4 video background and clickable phone call buttons
-3. **About/Intro**: Brief clinic introduction with accurate address
-4. **Services**: Grid of veterinary services (Radiology, Ultrasound, Surgery, Lab, Oncology, etc.)
-5. **Gallery**: Photo/video gallery with lightbox placeholder
-6. **Testimonials**: Customer reviews
-7. **Team**: Staff profiles (Veterinarians, Assistants, Specialists)
+2. **Hero Section**: Full-screen hero with hero.mp4 video background and "Sobre nosaltres" scroll button
+3. **About/Intro**: Brief clinic introduction with accurate address and "Coneix el nostre equip" button
+4. **Services**: Grid of veterinary services (Radiology, Ultrasound, Surgery, Lab, Oncology, etc.) with updated images
+5. **Gallery**: Interactive photo/video gallery with expandable lightbox modal (click to view, ESC/click to close)
+6. **Testimonials**: Customer reviews with 4.4-star rating and 3 real testimonials
+7. **Team**: 2 staff profiles (Ester Sarto Jorba and Diana Gambarte) with professional bios and photos
 8. **Hours & Location**: Accurate business hours and embedded Google Maps
 9. **Contact**: Prominent phone and email cards (no form - appointments by phone)
 10. **Footer**: Site links and social media (Facebook, Instagram)
