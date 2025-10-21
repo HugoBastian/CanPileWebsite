@@ -1,4 +1,5 @@
 import { MediaImage } from './components/MediaImage';
+import { MediaVideo } from './components/MediaVideo';
 
 export default function CanPileWireframe() {
   return (
@@ -29,19 +30,38 @@ export default function CanPileWireframe() {
 
       {/* Hero with background media */}
       <section id="hero" className="relative">
-        <div className="h-[56vh] md:h-[72vh] w-full bg-neutral-200 grid place-items-center">
-          {/* Placeholder for background video/image */}
-          <div className="absolute inset-0 bg-neutral-300/60 grid place-items-center">
-            <div className="w-3/4 max-w-3xl aspect-video rounded-xl border-2 border-dashed border-neutral-500 flex items-center justify-center text-neutral-600 text-sm">
-              Fondo: vídeo / imatge (muted, loop, lazy)
-            </div>
+        <div className="h-[56vh] md:h-[72vh] w-full bg-neutral-200 overflow-hidden relative">
+          {/* Background Video */}
+          <div className="absolute inset-0">
+            <MediaVideo
+              category="hero"
+              filename="hero.mp4"
+              className="w-full h-full object-cover"
+              autoplay={true}
+              loop={true}
+              muted={true}
+            />
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
-          <div className="relative z-10 text-center px-6">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">Cura veterinària propera i avançada</h1>
-            <p className="mt-3 md:mt-4 text-neutral-600 max-w-2xl mx-auto">Missatge breu de valor. 1–2 frases màxim. Overline/CTA clar.</p>
-            <div className="mt-6 flex items-center justify-center gap-3">
-              <button className="px-5 py-3 rounded-xl bg-[#227461] text-white text-sm hover:bg-[#1a5a4a] transition-colors">Demana cita</button>
-              <button className="px-5 py-3 rounded-xl border border-[#227461] text-[#227461] text-sm hover:bg-[#227461] hover:text-white transition-colors">Truca</button>
+          
+          {/* Hero Content */}
+          <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
+            <div>
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white drop-shadow-lg">
+                Cura veterinària propera i avançada
+              </h1>
+              <p className="mt-3 md:mt-4 text-white/90 max-w-2xl mx-auto drop-shadow-md">
+                Missatge breu de valor. 1–2 frases màxim. Overline/CTA clar.
+              </p>
+              <div className="mt-6 flex items-center justify-center gap-3">
+                <button className="px-5 py-3 rounded-xl bg-[#227461] text-white text-sm hover:bg-[#1a5a4a] transition-colors shadow-lg">
+                  Demana cita
+                </button>
+                <button className="px-5 py-3 rounded-xl border-2 border-white text-white text-sm hover:bg-white hover:text-[#227461] transition-colors shadow-lg">
+                  Truca
+                </button>
+              </div>
             </div>
           </div>
         </div>
