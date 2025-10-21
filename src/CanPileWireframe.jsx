@@ -52,7 +52,7 @@ export default function CanPileWireframe() {
                 Cura veterinària propera i avançada
               </h1>
               <p className="mt-3 md:mt-4 text-white/90 max-w-2xl mx-auto drop-shadow-md">
-                Missatge breu de valor. 1–2 frases màxim. Overline/CTA clar.
+                La nostra clínica va començar a oferir els seus serveis al 1990 i fins l'actualitat hem estat disposats a atendre els vostres animals de companyia de la millor manera possible. 
               </p>
               <div className="mt-6 flex items-center justify-center gap-3">
                 <button className="px-5 py-3 rounded-xl bg-[#227461] text-white text-sm hover:bg-[#1a5a4a] transition-colors shadow-lg">
@@ -81,8 +81,8 @@ export default function CanPileWireframe() {
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
           <div className="aspect-[4/3] rounded-2xl border-2 border-dashed" />
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">Sobre la clínica</h2>
-            <p className="mt-3 text-neutral-600">Breu introducció (80–120 paraules). Enllaç a pàgina “Nosaltres” amb més detall.</p>
+            <h2 className="text-2xl md:text-3xl font-semibold">Sobre la nostra clínica</h2>
+            <p className="mt-3 text-neutral-600">Situada en l'Av. Verge de la Salut, 7, a Santa Eulàlia de Ronçana, la nostra clínica està equipada amb una gran varietat de serveis veterinaris, radiologia digital, cirurgia amb aparells d'anestèsia ventilatòria d'última generació, laboratori veterinari, serveis de traumatologia, ecografies i ecocardiografies per part d'especialistes, oncologia, esterilitzacions, sala d'acomiadament. Tot perquè la seva mascota pugui ser atesa pel nostre equip clínic.</p>
             <div className="mt-5">
               <a href="#about" className="text-[#227461] underline hover:text-[#1a5a4a]">Més sobre nosaltres →</a>
             </div>
