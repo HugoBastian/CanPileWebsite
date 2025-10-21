@@ -438,7 +438,7 @@ export default function CanPileWireframe() {
             </div>
           </div>
           
-          <div className="mt-8 text-center">
+          <div className="mt-12 text-center">
             <p className="text-sm text-neutral-600">
               <strong>{t.contact.addressLabel}</strong> {t.contact.addressFull}
             </p>
