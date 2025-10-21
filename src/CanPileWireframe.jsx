@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import { MediaImage } from './components/MediaImage';
 import { MediaVideo } from './components/MediaVideo';
+import { translations } from './translations.js';
 
 export default function CanPileWireframe() {
+  const [language, setLanguage] = useState('ca');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxContent, setLightboxContent] = useState(null);
+
+  const t = translations[language];
 
   const openLightbox = (content) => {
     setLightboxContent(content);
@@ -44,15 +48,15 @@ export default function CanPileWireframe() {
               alt="Can Pilé Logo" 
               className="w-10 h-10 object-contain"
             />
-            <span className="font-semibold tracking-wide text-white">Clínica Veterinària Can Pilé</span>
+            <span className="font-semibold tracking-wide text-white">{t.header.brand}</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-white">
-            <a href="#hero" className="hover:underline">Inici</a>
-            <a href="#services" className="hover:underline">Serveis</a>
-            <a href="#gallery" className="hover:underline">Galeria</a>
-            <a href="#team" className="hover:underline">Equip</a>
-            <a href="#contact" className="hover:underline">Contacte</a>
-            <a href="#hours" className="hover:underline">Horari</a>
+            <a href="#hero" className="hover:underline">{t.nav.home}</a>
+            <a href="#services" className="hover:underline">{t.nav.services}</a>
+            <a href="#gallery" className="hover:underline">{t.nav.gallery}</a>
+            <a href="#team" className="hover:underline">{t.nav.team}</a>
+            <a href="#contact" className="hover:underline">{t.nav.contact}</a>
+            <a href="#hours" className="hover:underline">{t.nav.hours}</a>
             <div className="flex items-center gap-3 ml-2 pl-4 border-l border-white/30">
               <a href="https://www.instagram.com/vetcanpile/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -64,6 +68,14 @@ export default function CanPileWireframe() {
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
+              <button 
+                onClick={() => setLanguage(language === 'ca' ? 'es' : 'ca')} 
+                className="text-xs font-medium hover:opacity-80 transition-opacity"
+              >
+                <span className={language === 'ca' ? 'font-bold' : 'font-normal'}>CA</span>
+                <span className="mx-1">|</span>
+                <span className={language === 'es' ? 'font-bold' : 'font-normal'}>ES</span>
+              </button>
             </div>
           </nav>
           <div className="md:hidden flex items-center gap-3">
@@ -77,7 +89,14 @@ export default function CanPileWireframe() {
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
             </a>
-            <button className="px-3 py-2 border border-white text-white rounded-lg text-sm">Menu</button>
+            <button 
+              onClick={() => setLanguage(language === 'ca' ? 'es' : 'ca')} 
+              className="text-xs font-medium text-white hover:opacity-80 transition-opacity"
+            >
+              <span className={language === 'ca' ? 'font-bold' : 'font-normal'}>CA</span>
+              <span className="mx-1">|</span>
+              <span className={language === 'es' ? 'font-bold' : 'font-normal'}>ES</span>
+            </button>
           </div>
         </div>
       </header>
@@ -103,17 +122,17 @@ export default function CanPileWireframe() {
           <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
             <div>
               <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white drop-shadow-lg">
-                Cura veterinària propera i avançada
+                {t.hero.title}
               </h1>
               <p className="mt-3 md:mt-4 text-white/90 max-w-2xl mx-auto drop-shadow-md">
-                La nostra clínica va començar a oferir els seus serveis al 1990 i fins l'actualitat hem estat disposats a atendre els vostres animals de companyia de la millor manera possible. 
+                {t.hero.subtitle}
               </p>
               <div className="mt-6 flex items-center justify-center gap-3">
                 <a href="tel:+34938446939" className="px-5 py-3 rounded-xl bg-[#227461] text-white text-sm hover:bg-[#1a5a4a] transition-colors shadow-lg inline-block">
-                  Demana cita
+                  {t.hero.ctaPhone}
                 </a>
                 <a href="#about" className="px-5 py-3 rounded-xl border-2 border-white text-white text-sm hover:bg-white hover:text-[#227461] transition-colors shadow-lg inline-block">
-                  Sobre nosaltres
+                  {t.hero.ctaAbout}
                 </a>
               </div>
             </div>
@@ -128,14 +147,14 @@ export default function CanPileWireframe() {
           <MediaImage 
             category="services" 
             filename="Clinica-desde-el-frente.webp" 
-            alt="Clínica Veterinària Can Pilé" 
+            alt={t.header.brand} 
             className="aspect-[4/3] rounded-2xl object-cover w-full"
           />
           <div>
-            <h2 id="about" className="text-2xl md:text-3xl font-semibold">Sobre la nostra clínica</h2>
-            <p className="mt-3 text-neutral-600">Situada al Carrer Verge de la Salut, 7, a Santa Eulàlia de Ronçana, la nostra clínica està equipada amb una gran varietat de serveis veterinaris, radiologia digital, cirurgia amb aparells d'anestèsia ventilatòria d'última generació, laboratori veterinari, serveis de traumatologia, ecografies i ecocardiografies per part d'especialistes, oncologia, esterilitzacions, sala d'acomiadament. Tot perquè la seva mascota pugui ser atesa pel nostre equip clínic.</p>
+            <h2 id="about" className="text-2xl md:text-3xl font-semibold">{t.about.title}</h2>
+            <p className="mt-3 text-neutral-600">{t.about.intro}</p>
             <div className="mt-5">
-              <a href="#team" className="text-[#227461] underline hover:text-[#1a5a4a]">Coneix el nostre equip →</a>
+              <a href="#team" className="text-[#227461] underline hover:text-[#1a5a4a]">{t.about.cta}</a>
             </div>
           </div>
         </div>
@@ -145,28 +164,28 @@ export default function CanPileWireframe() {
       <section id="services" className="py-16 bg-white border-y">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-end justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">Serveis</h2>
-            <a className="text-sm text-[#227461] underline hover:text-[#1a5a4a]" href="#">Veure tots els serveis</a>
+            <h2 className="text-2xl md:text-3xl font-semibold">{t.services.title}</h2>
+            <a className="text-sm text-[#227461] underline hover:text-[#1a5a4a]" href="#">{t.services.viewAll}</a>
           </div>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: "Radiologia", image: "Radiologia.webp" },
-              { name: "Ecografia", image: "Ecografia.webp" },
-              { name: "Cirurgia", image: "Cirurgia2.webp" },
-              { name: "Laboratori", image: "Labratoria.webp" },
-              { name: "Oncologia", image: "BlueLight.webp" },
-              { name: "Altres especialitats", image: "Telescope.webp" }
+              { nameKey: "radiology", image: "Radiologia.webp" },
+              { nameKey: "ultrasound", image: "Ecografia.webp" },
+              { nameKey: "surgery", image: "Cirurgia2.webp" },
+              { nameKey: "lab", image: "Labratoria.webp" },
+              { nameKey: "oncology", image: "BlueLight.webp" },
+              { nameKey: "other", image: "Telescope.webp" }
             ].map((service) => (
-              <div key={service.name} className="rounded-2xl border p-5 bg-white hover:shadow-lg transition-shadow">
+              <div key={service.nameKey} className="rounded-2xl border p-5 bg-white hover:shadow-lg transition-shadow">
                 <MediaImage 
                   category="services" 
                   filename={service.image} 
-                  alt={service.name} 
+                  alt={t.services[service.nameKey]} 
                   className="h-36 rounded-xl mb-4 object-cover w-full"
                 />
-                <h3 className="font-semibold">{service.name}</h3>
-                <p className="text-sm text-neutral-600 mt-1">Descripció breu de 2–3 línies. Botó per a més info.</p>
-                <button className="mt-4 text-sm text-[#227461] underline hover:text-[#1a5a4a]">Saber-ne més</button>
+                <h3 className="font-semibold">{t.services[service.nameKey]}</h3>
+                <p className="text-sm text-neutral-600 mt-1">{t.services.description}</p>
+                <button className="mt-4 text-sm text-[#227461] underline hover:text-[#1a5a4a]">{t.services.learnMore}</button>
               </div>
             ))}
           </div>
@@ -176,8 +195,8 @@ export default function CanPileWireframe() {
       {/* Gallery / Media */}
       <section id="gallery" className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-semibold">Galeria</h2>
-          <p className="text-neutral-600 mt-2">Imatges i vídeos destacats de la clínica i els pacients. Feu clic per ampliar.</p>
+          <h2 className="text-2xl md:text-3xl font-semibold">{t.gallery.title}</h2>
+          <p className="text-neutral-600 mt-2">{t.gallery.subtitle}</p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { type: "image", category: "gallery", filename: "recepció can pilé.webp" },
@@ -198,7 +217,7 @@ export default function CanPileWireframe() {
                   <MediaImage 
                     category={item.category} 
                     filename={item.filename} 
-                    alt={`Galeria ${i + 1}`} 
+                    alt={`${t.gallery.imageAlt} ${i + 1}`} 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -232,7 +251,7 @@ export default function CanPileWireframe() {
       <section className="py-16 bg-white border-y">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center gap-3">
-            <h2 className="text-2xl md:text-3xl font-semibold">Opinions</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">{t.reviews.title}</h2>
             <div className="flex items-center gap-1">
               {[1,2,3,4].map((star) => (
                 <svg key={star} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -289,40 +308,40 @@ export default function CanPileWireframe() {
       {/* Team */}
       <section id="team" className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-semibold">Equip</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">{t.team.title}</h2>
           <div className="mt-8 grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <div className="rounded-2xl border p-6 bg-white hover:shadow-lg transition-shadow">
               <MediaImage 
                 category="team" 
                 filename="EsterConPerro.webp" 
-                alt="Ester Sarto Jorba" 
+                alt={t.team.ester.name} 
                 className="aspect-[4/3] rounded-xl mb-4 object-cover w-full"
               />
-              <h3 className="font-semibold text-lg">Ester Sarto Jorba</h3>
-              <p className="text-sm text-[#227461] font-medium mb-3">Veterinària</p>
+              <h3 className="font-semibold text-lg">{t.team.ester.name}</h3>
+              <p className="text-sm text-[#227461] font-medium mb-3">{t.team.ester.title}</p>
               <ul className="text-sm text-neutral-600 space-y-1.5">
-                <li>• Llicenciada en Veterinària per la UAB (promoció 83)</li>
-                <li>• Postgrau a la Universitat de Geòrgia (Atlanta, EUA)</li>
-                <li>• Més de 36 anys d'experiència</li>
-                <li>• Especialitzada en medicina interna, diagnòstic avançat, oncologia i tractaments preventius</li>
-                <li>• Membre actiu de l'AVEPA i assistent habitual al congrés SEVC</li>
-                <li>• Compromesa amb el benestar animal, la professionalitat i una atenció propera amb els animals i les seves famílies</li>
+                <li>{t.team.ester.bullet1}</li>
+                <li>{t.team.ester.bullet2}</li>
+                <li>{t.team.ester.bullet3}</li>
+                <li>{t.team.ester.bullet4}</li>
+                <li>{t.team.ester.bullet5}</li>
+                <li>{t.team.ester.bullet6}</li>
               </ul>
             </div>
             <div className="rounded-2xl border p-6 bg-white hover:shadow-lg transition-shadow">
               <MediaImage 
                 category="team" 
                 filename="DanaConPerro4.webp" 
-                alt="Diana Gambarte" 
+                alt={t.team.diana.name} 
                 className="aspect-[4/3] rounded-xl mb-4 object-cover w-full"
               />
-              <h3 className="font-semibold text-lg">Diana Gambarte</h3>
-              <p className="text-sm text-[#227461] font-medium mb-3">ATV i perruquera canina</p>
+              <h3 className="font-semibold text-lg">{t.team.diana.name}</h3>
+              <p className="text-sm text-[#227461] font-medium mb-3">{t.team.diana.title}</p>
               <ul className="text-sm text-neutral-600 space-y-1.5">
-                <li>• Més de 20 anys d'experiència</li>
-                <li>• Especialitzada en perruqueria canina</li>
-                <li>• Compromesa amb el benestar animal i la satisfacció dels clients</li>
-                <li>• Gran amant dels animals, molt dedicada a la cura i felicitat de les mascotes</li>
+                <li>{t.team.diana.bullet1}</li>
+                <li>{t.team.diana.bullet2}</li>
+                <li>{t.team.diana.bullet3}</li>
+                <li>{t.team.diana.bullet4}</li>
               </ul>
             </div>
           </div>
@@ -333,36 +352,36 @@ export default function CanPileWireframe() {
       <section id="hours" className="py-16 bg-white border-y">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">Horari</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.title}</h2>
             <div className="mt-5 space-y-3 text-sm">
               <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">Dilluns</span>
+                <span className="font-medium">{t.hours.monday}</span>
                 <span className="text-neutral-600">09:30–14:30 · 17:00–19:30</span>
               </div>
               <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">Dimarts</span>
+                <span className="font-medium">{t.hours.tuesday}</span>
                 <span className="text-neutral-600">09:30–14:30</span>
               </div>
               <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">Dimecres</span>
+                <span className="font-medium">{t.hours.wednesday}</span>
                 <span className="text-neutral-600">09:30–14:30</span>
               </div>
               <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">Dijous</span>
+                <span className="font-medium">{t.hours.thursday}</span>
                 <span className="text-neutral-600">09:30–14:30 · 17:00–19:30</span>
               </div>
               <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">Divendres</span>
+                <span className="font-medium">{t.hours.friday}</span>
                 <span className="text-neutral-600">09:30–14:30</span>
               </div>
               <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">Dissabte i Diumenge</span>
-                <span className="text-neutral-600 font-semibold">Tancat</span>
+                <span className="font-medium">{t.hours.weekendLabel}</span>
+                <span className="text-neutral-600 font-semibold">{t.hours.closed}</span>
               </div>
             </div>
           </div>
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">On som</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.location}</h2>
             <div className="mt-5 aspect-video rounded-2xl overflow-hidden border">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.0!2d2.2321075!3d41.6414639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDM4JzI5LjMiTiAywrAxMyc1NS42IkU!5e0!3m2!1sen!2ses!4v1729512000000"
@@ -372,12 +391,11 @@ export default function CanPileWireframe() {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localització de Clínica Veterinària Can Pilé"
+                title={t.hours.mapTitle}
               ></iframe>
             </div>
             <p className="mt-3 text-neutral-600 text-sm">
-              <strong>Carrer Verge de la Salut, 7</strong><br />
-              08187 Santa Eulàlia de Ronçana, Barcelona
+              {t.hours.addressFull}
             </p>
           </div>
         </div>
@@ -386,9 +404,9 @@ export default function CanPileWireframe() {
       {/* Contact */}
       <section id="contact" className="py-16">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center">Contacte</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold text-center">{t.contact.title}</h2>
           <p className="mt-3 text-neutral-600 text-center max-w-2xl mx-auto">
-            Per demanar cita, si us plau, truqueu-nos durant el nostre horari d'atenció. També podeu contactar-nos per correu electrònic.
+            {t.contact.subtitle}
           </p>
           
           <div className="mt-10 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -396,7 +414,7 @@ export default function CanPileWireframe() {
               <svg className="w-12 h-12 mb-4 text-[#227461] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <h3 className="text-xl font-semibold mb-2">Telèfon</h3>
+              <h3 className="text-xl font-semibold mb-2">{t.contact.phone}</h3>
               <p className="text-lg">938 446 939</p>
             </a>
             
@@ -404,14 +422,14 @@ export default function CanPileWireframe() {
               <svg className="w-12 h-12 mb-4 text-[#227461] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <h3 className="text-xl font-semibold mb-2">Email</h3>
+              <h3 className="text-xl font-semibold mb-2">{t.contact.email}</h3>
               <p className="text-lg">vetcanpile@hotmail.es</p>
             </a>
           </div>
           
           <div className="mt-8 text-center">
             <p className="text-sm text-neutral-600">
-              <strong>Adreça:</strong> Carrer Verge de la Salut, 7, 08187 Santa Eulàlia de Ronçana, Barcelona
+              <strong>{t.contact.addressLabel}</strong> {t.contact.addressFull}
             </p>
           </div>
         </div>
@@ -430,22 +448,22 @@ export default function CanPileWireframe() {
             <p className="text-neutral-600">© {new Date().getFullYear()} Can Pilé</p>
           </div>
           <div>
-            <p className="font-semibold mb-2">Clínica</p>
+            <p className="font-semibold mb-2">{t.footer.clinic}</p>
             <ul className="space-y-1 text-neutral-600">
-              <li><a href="#about" className="hover:underline">Nosaltres</a></li>
-              <li><a href="#services" className="hover:underline">Serveis</a></li>
-              <li><a href="#team" className="hover:underline">Equip</a></li>
+              <li><a href="#about" className="hover:underline">{t.footer.about}</a></li>
+              <li><a href="#services" className="hover:underline">{t.footer.services}</a></li>
+              <li><a href="#team" className="hover:underline">{t.footer.team}</a></li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold mb-2">Suport</p>
+            <p className="font-semibold mb-2">{t.footer.support}</p>
             <ul className="space-y-1 text-neutral-600">
-              <li><a href="#contact" className="hover:underline">Contacte</a></li>
-              <li><a href="#hours" className="hover:underline">Horari</a></li>
+              <li><a href="#contact" className="hover:underline">{t.footer.contact}</a></li>
+              <li><a href="#hours" className="hover:underline">{t.footer.hours}</a></li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold mb-2">Xarxes</p>
+            <p className="font-semibold mb-2">{t.footer.social}</p>
             <ul className="space-y-1 text-neutral-600">
               <li><a href="https://www.instagram.com/vetcanpile/" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a></li>
               <li><a href="https://www.facebook.com/people/Cli%CC%81nica-Veterina%CC%80ria-Can-Pile%CC%81/100064230750842/" target="_blank" rel="noopener noreferrer" className="hover:underline">Facebook</a></li>
@@ -463,7 +481,7 @@ export default function CanPileWireframe() {
           <button
             onClick={closeLightbox}
             className="absolute top-4 right-4 text-white hover:text-neutral-300 transition-colors z-10"
-            aria-label="Tancar"
+            aria-label={t.lightbox.close}
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -471,21 +489,21 @@ export default function CanPileWireframe() {
           </button>
           
           <div 
-            className="max-w-6xl max-h-[90vh] w-full flex items-center justify-center"
+            className="w-full h-full flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             {lightboxContent.type === "image" ? (
               <MediaImage 
                 category={lightboxContent.category}
                 filename={lightboxContent.filename}
-                alt="Galeria ampliada"
-                className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                alt={t.gallery.expandedAlt}
+                className="max-w-[90vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg"
               />
             ) : (
               <MediaVideo
                 category={lightboxContent.category}
                 filename={lightboxContent.filename}
-                className="max-w-full max-h-[90vh] rounded-lg"
+                className="max-w-[90vw] max-h-[90vh] w-auto h-auto rounded-lg"
                 autoplay={true}
                 loop={true}
                 muted={false}
