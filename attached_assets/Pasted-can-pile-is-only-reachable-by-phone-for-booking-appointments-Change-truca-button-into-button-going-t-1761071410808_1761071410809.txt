@@ -1,0 +1,41 @@
+can pile is only reachable by phone for booking appointments
+Change truca button into button going to about us section
+there is a little divider line between every section, but not between the hero and the about us section. add that. 
+there are only two team members (see information below), so only two blocks are needed in the equipo section. for Ester, use picture EsterConPerro.webp, for Dana use picture DanaConPerro4.webp
+make cirurgia picture cirurgia2.webp
+make other specialties picture Telescope.webp
+make the button Més sobre nosaltres under about our clinic lead to the team (and change button name)
+for the gallery, make sure that when you click a picture, it expands.
+for the gallery, show pictures recepció can pilé, DanaConGato, can pile perro en despacho, PerroFeliz, EstarDianaPerro, PerroFeliz2, EsterConFloresYPerro, and lastly a video that only plays when you click and expand it BrownLabVid
+Add user reviews (below)
+
+Equip
+Veterinària: Ester Sarto Jorba
+ Llicenciada en Veterinària per la UAB (promoció 83).
+ Postgrau a la Universitat de Geòrgia (Atlanta, EUA).
+ Més de 36 anys d’experiència.
+ Especialitzada en medicina interna, diagnòstic avançat, oncologia i tractaments preventius.
+ Membre actiu de l’AVEPA i assistent habitual al congrés SEVC.
+ Compromesa amb el benestar animal, la professionalitat i una atenció propera amb els animals i les seves famílies.
+
+ATV i perruquera canina: Diana Gambarte
+ Més de 20 anys d’experiència.
+ Especialitzada en perruqueria canina.
+ Compromesa amb el benestar animal i la satisfacció dels clients.
+ Gran amant dels animals, molt dedicada a la cura i felicitat de les mascotes.
+
+
+
+Good Reviews (OBTAIN PERMISSION FROM USERS):
+
+Add Average Score of 4.4 stars
+
+M. Cristina Nieto Abad - 5 stars
+En la Clínica Veterinaria Can Pilé, de Sta. Eulàlia de Ronçana, son muy profesionales y competentes, además de muy amables. (Soy médico de profesión, i sé de lo que hablo, porque la vrterinària es la medicina de los animales)
+Soy cliente desde el inicio de la clínica, he tenido ya 5 perros, i no pienso cambiar.
+
+Maria Romero - 4 stars
+Gui por primera vez pirque necesité llevar a la perrita al oftalmólogo. Las veterinarias muy amables y atentas. El especialista viene a la clínica bajo cita previa, muy profesional, con herramienta y tecnología que pudo hacer varias pruebas en situ. Se tomóel tiempo que necesitamos sin meter prisa y explicando todo. Muy sachosfecha con el trato
+
+LLUJOSA - 5 stars
+Vaig portar el meu gat i he quedat encantat amb el tracte tan proper i familiar que li han donat. Es nota la professionalitat i la cura amb què treballen. 100% recomanable! 🐾 …
