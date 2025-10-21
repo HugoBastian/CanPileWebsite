@@ -54,7 +54,7 @@ export default function CanPileWireframe() {
 
       {/* Hero with background media */}
       <section id="hero" className="relative">
-        <div className="h-[56vh] md:h-[72vh] w-full bg-neutral-200 overflow-hidden relative">
+        <div className="h-screen w-full bg-neutral-200 overflow-hidden relative">
           {/* Background Video */}
           <div className="absolute inset-0">
             <MediaVideo
@@ -91,54 +91,6 @@ export default function CanPileWireframe() {
         </div>
       </section>
 
-      {/* Trust Bar / Stats */}
-      <section className="py-8 bg-white border-b border-neutral-200">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {/* Google Reviews */}
-            <div className="flex flex-col items-center">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="flex gap-1">
-                  {[1,2,3,4,5].map((star) => (
-                    <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                  ))}
-                </div>
-                <span className="font-semibold text-neutral-800">5.0</span>
-              </div>
-              <p className="text-sm text-neutral-600">Valoracions de Google</p>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden md:block h-12 w-px bg-neutral-200"></div>
-
-            {/* Years of Experience */}
-            <div className="flex flex-col items-center">
-              <p className="text-3xl font-bold text-[#227461]">35+</p>
-              <p className="text-sm text-neutral-600">Anys d'experiència</p>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden md:block h-12 w-px bg-neutral-200"></div>
-
-            {/* Trusted Families */}
-            <div className="flex flex-col items-center">
-              <p className="text-3xl font-bold text-[#227461]">1000+</p>
-              <p className="text-sm text-neutral-600">Famílies confien en nosaltres</p>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden md:block h-12 w-px bg-neutral-200"></div>
-
-            {/* Services */}
-            <div className="flex flex-col items-center">
-              <p className="text-3xl font-bold text-[#227461]">24h</p>
-              <p className="text-sm text-neutral-600">Urgències disponibles</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Intro */}
       <section className="py-16">
