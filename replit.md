@@ -5,13 +5,20 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 
 ## Project Information
 - **Type**: Single-page veterinary clinic website
-- **Language**: Catalan (ca)
+- **Languages**: Catalan (ca) and Castellano/Spanish (es) with toggle
 - **Framework**: React + Vite
 - **Styling**: Tailwind CSS
 - **Status**: Wireframe/Mockup stage
 
 ## Recent Changes
 - **October 21, 2025**:
+  - **Language Toggle**: Implemented complete bilingual support (Catalan/Castellano) with language switcher in header
+  - Created comprehensive translations.js file with all website content in both CA and ES
+  - Added language state and toggle button (CA | ES) in header navigation
+  - All user-facing text now translates dynamically except user review testimonials
+  - Translated sections: header, navigation, hero, about, services, gallery, team, hours, contact, footer
+  - **Lightbox Fix**: Fixed modal sizing to properly constrain images/videos to 90% viewport while maintaining aspect ratio
+  - Changed lightbox container to use full flex layout with max-w-[90vw] max-h-[90vh] constraints
   - Implemented interactive gallery lightbox/modal with full keyboard accessibility (ESC to close)
   - Changed hero "Truca" button to scroll to About section, renamed to "Sobre nosaltres"
   - Added visual divider border between hero and about sections
