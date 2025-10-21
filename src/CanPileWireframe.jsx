@@ -54,7 +54,7 @@ export default function CanPileWireframe() {
 
       {/* Hero with background media */}
       <section id="hero" className="relative">
-        <div className="h-[56vh] md:h-[72vh] w-full bg-neutral-200 overflow-hidden relative">
+        <div className="h-screen w-full bg-neutral-200 overflow-hidden relative">
           {/* Background Video */}
           <div className="absolute inset-0">
             <MediaVideo
