@@ -1,7 +1,37 @@
+import { useState, useEffect } from 'react';
 import { MediaImage } from './components/MediaImage';
 import { MediaVideo } from './components/MediaVideo';
 
 export default function CanPileWireframe() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxContent, setLightboxContent] = useState(null);
+
+  const openLightbox = (content) => {
+    setLightboxContent(content);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setTimeout(() => setLightboxContent(null), 300);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && lightboxOpen) {
+        closeLightbox();
+      }
+    };
+
+    if (lightboxOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [lightboxOpen]);
+
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-800">
       {/* Header / Navigation */}
@@ -147,7 +177,7 @@ export default function CanPileWireframe() {
       <section id="gallery" className="py-16">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Galeria</h2>
-          <p className="text-neutral-600 mt-2">Imatges i vídeos destacats de la clínica i els pacients. Lightbox / modal en producció.</p>
+          <p className="text-neutral-600 mt-2">Imatges i vídeos destacats de la clínica i els pacients. Feu clic per ampliar.</p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { type: "image", category: "gallery", filename: "recepció can pilé.webp" },
@@ -160,22 +190,31 @@ export default function CanPileWireframe() {
               { type: "video", category: "videos", filename: "BrownLabVid.MP4.webm" }
             ].map((item, i) => (
               item.type === "image" ? (
-                <MediaImage 
+                <div 
                   key={i}
-                  category={item.category} 
-                  filename={item.filename} 
-                  alt={`Galeria ${i + 1}`} 
-                  className="aspect-square rounded-2xl object-cover w-full hover:scale-105 transition-transform cursor-pointer"
-                />
+                  onClick={() => openLightbox(item)}
+                  className="aspect-square rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition-transform"
+                >
+                  <MediaImage 
+                    category={item.category} 
+                    filename={item.filename} 
+                    alt={`Galeria ${i + 1}`} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               ) : (
-                <div key={i} className="aspect-square rounded-2xl overflow-hidden relative cursor-pointer hover:scale-105 transition-transform bg-neutral-900">
+                <div 
+                  key={i} 
+                  onClick={() => openLightbox(item)}
+                  className="aspect-square rounded-2xl overflow-hidden relative cursor-pointer hover:scale-105 transition-transform bg-neutral-900"
+                >
                   <MediaVideo
                     category={item.category}
                     filename={item.filename}
                     className="w-full h-full object-cover"
                     autoplay={false}
                     loop={false}
-                    muted={false}
+                    muted={true}
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 pointer-events-none">
                     <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -414,6 +453,47 @@ export default function CanPileWireframe() {
           </div>
         </div>
       </footer>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && lightboxContent && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 animate-fadeIn"
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 text-white hover:text-neutral-300 transition-colors z-10"
+            aria-label="Tancar"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          <div 
+            className="max-w-6xl max-h-[90vh] w-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {lightboxContent.type === "image" ? (
+              <MediaImage 
+                category={lightboxContent.category}
+                filename={lightboxContent.filename}
+                alt="Galeria ampliada"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              />
+            ) : (
+              <MediaVideo
+                category={lightboxContent.category}
+                filename={lightboxContent.filename}
+                className="max-w-full max-h-[90vh] rounded-lg"
+                autoplay={true}
+                loop={true}
+                muted={false}
+              />
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
