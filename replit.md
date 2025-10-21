@@ -11,6 +11,17 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 - **Status**: Wireframe/Mockup stage
 
 ## Recent Changes
+- **October 21, 2025**:
+  - Implemented hero.mp4 video as autoplay background in hero section
+  - Updated business hours to accurate schedule (Mon & Thu: 09:30–14:30, 17:00–19:30; Tue/Wed/Fri: 09:30–14:30; Sat & Sun: Closed)
+  - Updated all contact information throughout site (Carrer Verge de la Salut, 7; Phone: 938 446 939; Email: vetcanpile@hotmail.es)
+  - Added functional social media links to header and footer (Instagram, Facebook)
+  - Removed association badges section (not applicable)
+  - Removed contact form (appointments by phone only)
+  - Implemented working Google Maps embed with clinic location coordinates
+  - Made all hero buttons functional (call to action links to phone)
+  - Made footer "Nosaltres" link navigate to "Sobre la clínica" section
+
 - **October 20, 2025**:
   - Integrated Replit App Storage for media management (photos/videos)
   - Created backend server infrastructure with Express
@@ -67,17 +78,16 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 
 ### Website Sections
 The website includes the following sections:
-1. **Header/Navigation**: Sticky header with logo and navigation menu
-2. **Hero Section**: Full-screen hero with background media placeholder and CTA buttons
-3. **Trust/Badges**: Association and certification badges
-4. **About/Intro**: Brief clinic introduction
-5. **Services**: Grid of veterinary services (Radiology, Ultrasound, Surgery, Lab, Oncology, etc.)
-6. **Gallery**: Photo/video gallery with lightbox placeholder
-7. **Testimonials**: Customer reviews
-8. **Team**: Staff profiles (Veterinarians, Assistants, Specialists)
-9. **Hours & Location**: Business hours and map integration
-10. **Contact**: Contact form and clinic information
-11. **Footer**: Site links and social media
+1. **Header/Navigation**: Sticky header with logo, navigation menu, and social media icons (Instagram, Facebook)
+2. **Hero Section**: Full-screen hero with hero.mp4 video background and clickable phone call buttons
+3. **About/Intro**: Brief clinic introduction with accurate address
+4. **Services**: Grid of veterinary services (Radiology, Ultrasound, Surgery, Lab, Oncology, etc.)
+5. **Gallery**: Photo/video gallery with lightbox placeholder
+6. **Testimonials**: Customer reviews
+7. **Team**: Staff profiles (Veterinarians, Assistants, Specialists)
+8. **Hours & Location**: Accurate business hours and embedded Google Maps
+9. **Contact**: Prominent phone and email cards (no form - appointments by phone)
+10. **Footer**: Site links and social media (Facebook, Instagram)
 
 ### Development
 - Run `npm run dev` to start frontend server on port 5000
@@ -98,13 +108,26 @@ The website includes the following sections:
 - Build command: `npm run build`
 - Run command: `npx vite preview --host 0.0.0.0 --port 5000`
 
+## Clinic Information
+- **Address**: Carrer Verge de la Salut, 7, 08187 Santa Eulàlia de Ronçana, Barcelona
+- **Phone**: 938 446 939 (for appointments)
+- **Email**: vetcanpile@hotmail.es
+- **Hours**: 
+  - Monday & Thursday: 09:30–14:30, 17:00–19:30
+  - Tuesday, Wednesday, Friday: 09:30–14:30
+  - Saturday & Sunday: Closed
+- **Social Media**: 
+  - Instagram: @vetcanpile
+  - Facebook: Clínica Veterinària Can Pilé
+
 ## Notes
-- This is a wireframe/mockup transitioning to a functional website
-- Media (images, videos) can be uploaded via Replit App Storage
-- Ready-to-use media components for displaying photos and videos
+- This is a functional website with real clinic information
+- Media (images, videos) are served from Replit App Storage
+- Hero section features autoplay background video (hero.mp4)
+- All contact methods (phone, email) are clickable and functional
 - Text content is in Catalan
 - The design uses a neutral color scheme with responsive layout
-- Backend server configured but currently optional for basic media serving
+- Appointments are handled by phone only (no online booking form)
 
 ## Next Steps to Complete Media Integration
 1. Create an App Storage bucket in Replit (Tools → Object Storage)
