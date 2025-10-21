@@ -199,9 +199,9 @@ export default function CanPileWireframe() {
           <p className="text-neutral-600 mt-2">{t.gallery.subtitle}</p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { type: "image", category: "gallery", filename: "recepció can pilé.webp" },
-              { type: "image", category: "team", filename: "DanaConGato.webp" },
+              { type: "image", category: "gallery", filename: "recepciocanpile.webp" },
               { type: "image", category: "gallery", filename: "can pile perro en despacho.webp" },
+              { type: "image", category: "team", filename: "DanaConGato.webp" },
               { type: "image", category: "gallery", filename: "PerroFeliz.webp" },
               { type: "image", category: "team", filename: "EstarDianaPerro.webp" },
               { type: "image", category: "gallery", filename: "PerroFeliz2.webp" },
@@ -409,21 +409,30 @@ export default function CanPileWireframe() {
             {t.contact.subtitle}
           </p>
           
+          <div className="mt-8 max-w-2xl mx-auto">
+            <MediaImage 
+              category="gallery"
+              filename="Waiting-room.webp"
+              alt="Sala d'espera Can Pilé"
+              className="w-full h-64 object-cover rounded-2xl"
+            />
+          </div>
+          
           <div className="mt-10 grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <a href="tel:+34938446939" className="flex flex-col items-center p-8 rounded-2xl border-2 border-[#227461] hover:bg-[#227461] hover:text-white transition-colors group">
-              <svg className="w-12 h-12 mb-4 text-[#227461] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="tel:+34938446939" className="flex flex-col items-center p-6 rounded-2xl border-2 border-[#227461] hover:bg-[#227461] hover:text-white transition-colors group">
+              <svg className="w-10 h-10 mb-3 text-[#227461] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <h3 className="text-xl font-semibold mb-2">{t.contact.phone}</h3>
-              <p className="text-lg">938 446 939</p>
+              <h3 className="text-lg font-semibold mb-2">{t.contact.phone}</h3>
+              <p className="text-base">938 446 939</p>
             </a>
             
-            <a href="mailto:vetcanpile@hotmail.es" className="flex flex-col items-center p-8 rounded-2xl border-2 border-[#227461] hover:bg-[#227461] hover:text-white transition-colors group">
-              <svg className="w-12 h-12 mb-4 text-[#227461] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="mailto:vetcanpile@hotmail.es" className="flex flex-col items-center p-6 rounded-2xl border-2 border-[#227461] hover:bg-[#227461] hover:text-white transition-colors group">
+              <svg className="w-10 h-10 mb-3 text-[#227461] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <h3 className="text-xl font-semibold mb-2">{t.contact.email}</h3>
-              <p className="text-lg">vetcanpile@hotmail.es</p>
+              <h3 className="text-lg font-semibold mb-2">{t.contact.email}</h3>
+              <p className="text-base">vetcanpile@hotmail.es</p>
             </a>
           </div>
           
