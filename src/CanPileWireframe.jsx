@@ -82,8 +82,8 @@ export default function CanPileWireframe() {
                 <a href="tel:+34938446939" className="px-5 py-3 rounded-xl bg-[#227461] text-white text-sm hover:bg-[#1a5a4a] transition-colors shadow-lg inline-block">
                   Demana cita
                 </a>
-                <a href="tel:+34938446939" className="px-5 py-3 rounded-xl border-2 border-white text-white text-sm hover:bg-white hover:text-[#227461] transition-colors shadow-lg inline-block">
-                  Truca
+                <a href="#about" className="px-5 py-3 rounded-xl border-2 border-white text-white text-sm hover:bg-white hover:text-[#227461] transition-colors shadow-lg inline-block">
+                  Sobre nosaltres
                 </a>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function CanPileWireframe() {
 
 
       {/* Intro */}
-      <section className="py-16">
+      <section className="py-16 border-t">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
           <MediaImage 
             category="services" 
@@ -105,7 +105,7 @@ export default function CanPileWireframe() {
             <h2 id="about" className="text-2xl md:text-3xl font-semibold">Sobre la nostra clínica</h2>
             <p className="mt-3 text-neutral-600">Situada al Carrer Verge de la Salut, 7, a Santa Eulàlia de Ronçana, la nostra clínica està equipada amb una gran varietat de serveis veterinaris, radiologia digital, cirurgia amb aparells d'anestèsia ventilatòria d'última generació, laboratori veterinari, serveis de traumatologia, ecografies i ecocardiografies per part d'especialistes, oncologia, esterilitzacions, sala d'acomiadament. Tot perquè la seva mascota pugui ser atesa pel nostre equip clínic.</p>
             <div className="mt-5">
-              <a href="#about" className="text-[#227461] underline hover:text-[#1a5a4a]">Més sobre nosaltres →</a>
+              <a href="#team" className="text-[#227461] underline hover:text-[#1a5a4a]">Coneix el nostre equip →</a>
             </div>
           </div>
         </div>
@@ -122,10 +122,10 @@ export default function CanPileWireframe() {
             {[
               { name: "Radiologia", image: "Radiologia.webp" },
               { name: "Ecografia", image: "Ecografia.webp" },
-              { name: "Cirurgia", image: "Cirurgia.webp" },
+              { name: "Cirurgia", image: "Cirurgia2.webp" },
               { name: "Laboratori", image: "Labratoria.webp" },
               { name: "Oncologia", image: "BlueLight.webp" },
-              { name: "Altres especialitats", image: "EsterConPerro.webp" }
+              { name: "Altres especialitats", image: "Telescope.webp" }
             ].map((service) => (
               <div key={service.name} className="rounded-2xl border p-5 bg-white hover:shadow-lg transition-shadow">
                 <MediaImage 
@@ -150,20 +150,40 @@ export default function CanPileWireframe() {
           <p className="text-neutral-600 mt-2">Imatges i vídeos destacats de la clínica i els pacients. Lightbox / modal en producció.</p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "recepció can pilé.webp",
-              "can pilé con braco.webp",
-              "JefePerro.webp",
-              "PerroFeliz.webp",
-              "PerroFeliz2.webp",
-              "can pile perro en despacho.webp"
-            ].map((img, i) => (
-              <MediaImage 
-                key={i}
-                category="gallery" 
-                filename={img} 
-                alt={`Galeria ${i + 1}`} 
-                className="aspect-square rounded-2xl object-cover w-full hover:scale-105 transition-transform cursor-pointer"
-              />
+              { type: "image", category: "gallery", filename: "recepció can pilé.webp" },
+              { type: "image", category: "team", filename: "DanaConGato.webp" },
+              { type: "image", category: "gallery", filename: "can pile perro en despacho.webp" },
+              { type: "image", category: "gallery", filename: "PerroFeliz.webp" },
+              { type: "image", category: "team", filename: "EstarDianaPerro.webp" },
+              { type: "image", category: "gallery", filename: "PerroFeliz2.webp" },
+              { type: "image", category: "team", filename: "EsterConFloresYPerro.webp" },
+              { type: "video", category: "videos", filename: "BrownLabVid.MP4.webm" }
+            ].map((item, i) => (
+              item.type === "image" ? (
+                <MediaImage 
+                  key={i}
+                  category={item.category} 
+                  filename={item.filename} 
+                  alt={`Galeria ${i + 1}`} 
+                  className="aspect-square rounded-2xl object-cover w-full hover:scale-105 transition-transform cursor-pointer"
+                />
+              ) : (
+                <div key={i} className="aspect-square rounded-2xl overflow-hidden relative cursor-pointer hover:scale-105 transition-transform bg-neutral-900">
+                  <MediaVideo
+                    category={item.category}
+                    filename={item.filename}
+                    className="w-full h-full object-cover"
+                    autoplay={false}
+                    loop={false}
+                    muted={false}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 pointer-events-none">
+                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -172,15 +192,57 @@ export default function CanPileWireframe() {
       {/* Testimonials */}
       <section className="py-16 bg-white border-y">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-semibold">Opinions</h2>
+          <div className="flex items-center gap-3">
+            <h2 className="text-2xl md:text-3xl font-semibold">Opinions</h2>
+            <div className="flex items-center gap-1">
+              {[1,2,3,4].map((star) => (
+                <svg key={star} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+              <svg className="w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <span className="ml-2 text-sm text-neutral-600 font-medium">4.4</span>
+            </div>
+          </div>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {[1,2,3].map((i) => (
-              <div key={i} className="rounded-2xl border p-5 bg-neutral-50">
-                <div className="h-10 w-10 rounded-full bg-neutral-200 mb-3" />
-                <p className="text-sm italic">“Comentari del client. 1–3 frases.”</p>
-                <p className="mt-3 text-xs text-neutral-500">Nom del client</p>
+            <div className="rounded-2xl border p-5 bg-neutral-50">
+              <div className="flex items-center gap-1 mb-3">
+                {[1,2,3,4,5].map((star) => (
+                  <svg key={star} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
               </div>
-            ))}
+              <p className="text-sm italic">"En la Clínica Veterinaria Can Pilé, de Sta. Eulàlia de Ronçana, son muy profesionales y competentes, además de muy amables. (Soy médico de profesión, i sé de lo que hablo, porque la vrterinària es la medicina de los animales) Soy cliente desde el inicio de la clínica, he tenido ya 5 perros, i no pienso cambiar."</p>
+              <p className="mt-3 text-xs text-neutral-500 font-medium">M. Cristina Nieto Abad</p>
+            </div>
+            <div className="rounded-2xl border p-5 bg-neutral-50">
+              <div className="flex items-center gap-1 mb-3">
+                {[1,2,3,4].map((star) => (
+                  <svg key={star} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+                <svg className="w-4 h-4 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              </div>
+              <p className="text-sm italic">"Gui por primera vez pirque necesité llevar a la perrita al oftalmólogo. Las veterinarias muy amables y atentas. El especialista viene a la clínica bajo cita previa, muy profesional, con herramienta y tecnología que pudo hacer varias pruebas en situ. Se tomóel tiempo que necesitamos sin meter prisa y explicando todo. Muy sachosfecha con el trato"</p>
+              <p className="mt-3 text-xs text-neutral-500 font-medium">Maria Romero</p>
+            </div>
+            <div className="rounded-2xl border p-5 bg-neutral-50">
+              <div className="flex items-center gap-1 mb-3">
+                {[1,2,3,4,5].map((star) => (
+                  <svg key={star} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p className="text-sm italic">"Vaig portar el meu gat i he quedat encantat amb el tracte tan proper i familiar que li han donat. Es nota la professionalitat i la cura amb què treballen. 100% recomanable! 🐾"</p>
+              <p className="mt-3 text-xs text-neutral-500 font-medium">LLUJOSA</p>
+            </div>
           </div>
         </div>
       </section>
@@ -189,24 +251,41 @@ export default function CanPileWireframe() {
       <section id="team" className="py-16">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Equip</h2>
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "Ester", role: "Veterinària", image: "EsterConGato.webp" },
-              { name: "Dana", role: "Auxiliar", image: "DanaConPerro.webp" },
-              { name: "Equip", role: "Especialistes", image: "EsterYDana2.webp" }
-            ].map((member, i) => (
-              <div key={i} className="rounded-2xl border p-5 bg-white hover:shadow-lg transition-shadow">
-                <MediaImage 
-                  category="team" 
-                  filename={member.image} 
-                  alt={member.name} 
-                  className="aspect-[4/3] rounded-xl mb-4 object-cover w-full"
-                />
-                <h3 className="font-semibold">{member.name}</h3>
-                <p className="text-sm text-neutral-500">{member.role}</p>
-                <p className="text-sm text-neutral-600 mt-2">Bio breu de 2–3 línies.</p>
-              </div>
-            ))}
+          <div className="mt-8 grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="rounded-2xl border p-6 bg-white hover:shadow-lg transition-shadow">
+              <MediaImage 
+                category="team" 
+                filename="EsterConPerro.webp" 
+                alt="Ester Sarto Jorba" 
+                className="aspect-[4/3] rounded-xl mb-4 object-cover w-full"
+              />
+              <h3 className="font-semibold text-lg">Ester Sarto Jorba</h3>
+              <p className="text-sm text-[#227461] font-medium mb-3">Veterinària</p>
+              <ul className="text-sm text-neutral-600 space-y-1.5">
+                <li>• Llicenciada en Veterinària per la UAB (promoció 83)</li>
+                <li>• Postgrau a la Universitat de Geòrgia (Atlanta, EUA)</li>
+                <li>• Més de 36 anys d'experiència</li>
+                <li>• Especialitzada en medicina interna, diagnòstic avançat, oncologia i tractaments preventius</li>
+                <li>• Membre actiu de l'AVEPA i assistent habitual al congrés SEVC</li>
+                <li>• Compromesa amb el benestar animal, la professionalitat i una atenció propera amb els animals i les seves famílies</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border p-6 bg-white hover:shadow-lg transition-shadow">
+              <MediaImage 
+                category="team" 
+                filename="DanaConPerro4.webp" 
+                alt="Diana Gambarte" 
+                className="aspect-[4/3] rounded-xl mb-4 object-cover w-full"
+              />
+              <h3 className="font-semibold text-lg">Diana Gambarte</h3>
+              <p className="text-sm text-[#227461] font-medium mb-3">ATV i perruquera canina</p>
+              <ul className="text-sm text-neutral-600 space-y-1.5">
+                <li>• Més de 20 anys d'experiència</li>
+                <li>• Especialitzada en perruqueria canina</li>
+                <li>• Compromesa amb el benestar animal i la satisfacció dels clients</li>
+                <li>• Gran amant dels animals, molt dedicada a la cura i felicitat de les mascotes</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
