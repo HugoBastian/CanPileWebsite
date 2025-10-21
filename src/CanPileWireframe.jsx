@@ -412,7 +412,7 @@ export default function CanPileWireframe() {
           <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
             <div className="w-full">
               <MediaImage 
-                category="gallery"
+                category="services"
                 filename="Waiting-room.webp"
                 alt="Sala d'espera Can Pilé"
                 className="w-full h-full max-h-80 object-cover rounded-2xl"
