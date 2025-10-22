@@ -415,15 +415,15 @@ export default function CanPileWireframe() {
             {t.contact.subtitle}
           </p>
           
-          <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
-            <div className="w-full">
-              <MediaImage 
-                category="services"
-                filename="Waiting-room.webp"
-                alt="Sala d'espera Can Pilé"
-                className="w-full h-full max-h-80 object-cover rounded-2xl"
-              />
-            </div>
+            <div className="mt-10 grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start md:items-center">
+              <div className="w-full relative top-[-1rem] md:top-[-1.5rem]">
+                <MediaImage 
+                  category="services"
+                  filename="Waiting-room.webp"
+                  alt="Sala d'espera Can Pilé"
+                  className="w-full h-full max-h-80 object-cover rounded-2xl"
+                />
+              </div>
             
             <div className="grid gap-6">
               <a href="tel:+34938446939" className="flex flex-col items-center p-6 rounded-2xl border-2 border-[#227461] hover:bg-[#227461] hover:text-white transition-colors group">
