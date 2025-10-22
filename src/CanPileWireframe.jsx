@@ -151,7 +151,7 @@ export default function CanPileWireframe() {
             className="aspect-[4/3] rounded-2xl object-cover w-full"
           />
           <div>
-            <h2 id="about" className="text-2xl md:text-3xl font-semibold">{t.about.title}</h2>
+            <h2 id="about" className="text-2xl md:text-3xl font-semibold scroll-mt-20">{t.about.title}</h2>
             <p className="mt-3 text-neutral-600">{t.about.intro}</p>
             <div className="mt-5">
               <a href="#team" className="text-[#227461] underline hover:text-[#1a5a4a]">{t.about.cta}</a>
@@ -161,7 +161,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Services preview */}
-      <section id="services" className="py-16 bg-white border-y">
+      <section id="services" className="py-16 bg-white border-y scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-end justify-between">
             <h2 className="text-2xl md:text-3xl font-semibold">{t.services.title}</h2>
@@ -193,7 +193,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Gallery / Media */}
-      <section id="gallery" className="py-16">
+      <section id="gallery" className="py-16 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">{t.gallery.title}</h2>
           <p className="text-neutral-600 mt-2">{t.gallery.subtitle}</p>
@@ -306,7 +306,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Team */}
-      <section id="team" className="py-16">
+      <section id="team" className="py-16 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">{t.team.title}</h2>
           <div className="mt-8 grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -349,7 +349,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Hours & Location */}
-      <section id="hours" className="py-16 bg-white border-y">
+      <section id="hours" className="py-16 bg-white border-y scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.title}</h2>
@@ -402,7 +402,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16">
+      <section id="contact" className="py-16 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold text-center">{t.contact.title}</h2>
           <p className="mt-3 text-neutral-600 text-center max-w-2xl mx-auto">
