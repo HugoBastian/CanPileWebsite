@@ -11,6 +11,12 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 - **Status**: Wireframe/Mockup stage
 
 ## Recent Changes
+- **October 22, 2025**:
+  - **Contact Section**: Redesigned layout with side-by-side format (Waiting-room.webp image on left, buttons on right)
+  - Made contact buttons smaller and more compact (reduced padding, icon size, and font sizes)
+  - Added scroll margin (scroll-mt-20) to all sections for proper navigation with sticky header
+  - **Reviews**: Changed star rating display from 4.0 to 4.5 stars (using half-star gradient) to better represent 4.4 average
+
 - **October 21, 2025**:
   - **Language Toggle**: Implemented complete bilingual support (Catalan/Castellano) with language switcher in header
   - Created comprehensive translations.js file with all website content in both CA and ES
@@ -25,9 +31,9 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
   - Updated team section to 2 members: Ester Sarto Jorba and Diana Gambarte with full professional bios
   - Updated team photos to EsterConPerro.webp and DanaConPerro4.webp
   - Changed "Més sobre nosaltres" button to "Coneix el nostre equip" linking to team section
-  - Updated service images: Cirurgia uses Cirurgia2.webp, Altres especialitats uses Telescope.webp
+  - Updated service images: Cirurgia uses Cirurgia2.webp, Altres especialitat uses Telescope.webp
   - Updated gallery with 7 specific images + 1 video (BrownLabVid.MP4.webm)
-  - Added customer reviews section with 4.4-star average rating and 3 testimonials
+  - Added customer reviews section with 4.5-star average rating and 3 testimonials
   - Implemented hero.mp4 video as autoplay background in hero section
   - Updated business hours to accurate schedule (Mon & Thu: 09:30–14:30, 17:00–19:30; Tue/Wed/Fri: 09:30–14:30; Sat & Sun: Closed)
   - Updated all contact information throughout site (Carrer Verge de la Salut, 7; Phone: 938 446 939; Email: vetcanpile@hotmail.es)
