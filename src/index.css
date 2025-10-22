@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUpFadeIn {
+  animation: slideUpFadeIn 0.4s ease-out forwards;
+}
