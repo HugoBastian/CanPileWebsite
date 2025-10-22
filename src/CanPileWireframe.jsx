@@ -7,6 +7,7 @@ export default function CanPileWireframe() {
   const [language, setLanguage] = useState('ca');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxContent, setLightboxContent] = useState(null);
+  const [showFloatingButton, setShowFloatingButton] = useState(false);
 
   const t = translations[language];
 
@@ -35,6 +36,24 @@ export default function CanPileWireframe() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [lightboxOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const scrollPosition = window.scrollY;
+        setShowFloatingButton(scrollPosition > heroBottom);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-800">
@@ -129,7 +148,7 @@ export default function CanPileWireframe() {
               </p>
               <div className="mt-6 flex items-center justify-center gap-3">
                 <a href="tel:+34938446939" className="px-5 py-3 rounded-xl bg-[#227461] text-white text-sm hover:bg-[#1a5a4a] transition-colors shadow-lg inline-block">
-                  {t.hero.ctaPhone}
+                  📞 {t.hero.ctaPhone}
                 </a>
                 <a href="#about" className="px-5 py-3 rounded-xl border-2 border-white text-white text-sm hover:bg-white hover:text-[#227461] transition-colors shadow-lg inline-block">
                   {t.hero.ctaAbout}
@@ -528,6 +547,19 @@ export default function CanPileWireframe() {
             )}
           </div>
         </div>
+      )}
+
+      {/* Floating Call Button */}
+      {showFloatingButton && (
+        <a
+          href="tel:+34938446939"
+          className="fixed bottom-6 right-6 z-50 bg-[#227461] text-white p-4 rounded-full shadow-lg hover:bg-[#1a5a4a] transition-all duration-300 hover:scale-110 animate-fadeIn"
+          aria-label="Trucar a la clínica"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+        </a>
       )}
     </div>
   );
