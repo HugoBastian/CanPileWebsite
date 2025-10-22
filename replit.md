@@ -12,6 +12,10 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 
 ## Recent Changes
 - **October 22, 2025**:
+  - **Floating Call Button**: Added fixed-position call button in bottom-right that appears when scrolling past hero section
+  - Implemented scroll tracking with useEffect to show/hide button based on scroll position
+  - Button features smooth fade-in animation, hover effects, and direct tel: link for calling
+  - **Hero CTA Enhancement**: Added minimalist phone emoji (📞) before "Demana cita" button text
   - **Contact Section**: Redesigned layout with side-by-side format (Waiting-room.webp image on left, buttons on right)
   - Made contact buttons smaller and more compact (reduced padding, icon size, and font sizes)
   - Added scroll margin (scroll-mt-20) to all sections for proper navigation with sticky header
