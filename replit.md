@@ -11,6 +11,15 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 - **Status**: Wireframe/Mockup stage
 
 ## Recent Changes
+- **October 27, 2025**:
+  - **Legal Pages**: Added three separate legal pages accessible from footer
+  - Created Aviso Legal (Legal Notice) page with site responsibility and intellectual property information
+  - Created Política de Privacidad (Privacy Policy) page with data protection and user rights
+  - Created Política de Cookies (Cookie Policy) page with cookie usage and management information
+  - Added "Legal" section to footer with links to all legal pages
+  - Implemented SPA-style navigation with back buttons on legal pages
+  - All legal content is in Spanish only
+
 - **October 22, 2025**:
   - **Floating Call Button**: Added fixed-position call button in bottom-right that appears when scrolling past hero midpoint
   - Implemented scroll tracking with useEffect to show/hide button when half of hero section is scrolled past
