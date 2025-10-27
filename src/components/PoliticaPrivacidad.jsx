@@ -1,9 +1,18 @@
-export default function PoliticaPrivacidad({ onClose }) {
+import { useNavigate } from 'react-router-dom';
+
+export default function PoliticaPrivacidad() {
+  const navigate = useNavigate();
+
+  const handleBackClick = () => {
+    navigate('/');
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="min-h-screen bg-neutral-50">
       <div className="max-w-4xl mx-auto px-4 py-16">
         <button 
-          onClick={onClose}
+          onClick={handleBackClick}
           className="mb-8 text-[#227461] hover:text-[#1a5a4a] flex items-center gap-2 transition-colors"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

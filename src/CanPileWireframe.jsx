@@ -1,30 +1,16 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { MediaImage } from './components/MediaImage';
 import { MediaVideo } from './components/MediaVideo';
 import { translations } from './translations.js';
-import AvisoLegal from './components/AvisoLegal';
-import PoliticaPrivacidad from './components/PoliticaPrivacidad';
-import PoliticaCookies from './components/PoliticaCookies';
 
 export default function CanPileWireframe() {
   const [language, setLanguage] = useState('ca');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxContent, setLightboxContent] = useState(null);
   const [showFloatingButton, setShowFloatingButton] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
 
   const t = translations[language];
-
-  // Handle legal page navigation
-  const showLegalPage = (page) => {
-    setCurrentPage(page);
-    window.scrollTo(0, 0);
-  };
-
-  const showHomePage = () => {
-    setCurrentPage('home');
-    window.scrollTo(0, 0);
-  };
 
   // Blur floating button when it becomes hidden to prevent focus trap
   useEffect(() => {
@@ -76,17 +62,6 @@ export default function CanPileWireframe() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  // Show legal pages if requested
-  if (currentPage === 'aviso-legal') {
-    return <AvisoLegal onClose={showHomePage} />;
-  }
-  if (currentPage === 'privacidad') {
-    return <PoliticaPrivacidad onClose={showHomePage} />;
-  }
-  if (currentPage === 'cookies') {
-    return <PoliticaCookies onClose={showHomePage} />;
-  }
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-800">
@@ -544,9 +519,9 @@ export default function CanPileWireframe() {
           <div>
             <p className="font-semibold mb-2">Legal</p>
             <ul className="space-y-1 text-neutral-600">
-              <li><button onClick={() => showLegalPage('aviso-legal')} className="hover:underline text-left">Aviso Legal</button></li>
-              <li><button onClick={() => showLegalPage('privacidad')} className="hover:underline text-left">Política de Privacidad</button></li>
-              <li><button onClick={() => showLegalPage('cookies')} className="hover:underline text-left">Política de Cookies</button></li>
+              <li><Link to="/aviso-legal" className="hover:underline">Aviso Legal</Link></li>
+              <li><Link to="/politica-privacidad" className="hover:underline">Política de Privacidad</Link></li>
+              <li><Link to="/politica-cookies" className="hover:underline">Política de Cookies</Link></li>
             </ul>
           </div>
         </div>
