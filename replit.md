@@ -12,12 +12,15 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 
 ## Recent Changes
 - **October 27, 2025**:
-  - **Legal Pages**: Added three separate legal pages accessible from footer
-  - Created Aviso Legal (Legal Notice) page with site responsibility and intellectual property information
-  - Created Política de Privacidad (Privacy Policy) page with data protection and user rights
-  - Created Política de Cookies (Cookie Policy) page with cookie usage and management information
-  - Added "Legal" section to footer with links to all legal pages
-  - Implemented SPA-style navigation with back buttons on legal pages
+  - **Legal Pages with URL Routing**: Implemented three separate legal pages with proper URL-based routing
+  - Created Aviso Legal (Legal Notice) page accessible at `/aviso-legal` with site responsibility and intellectual property information
+  - Created Política de Privacidad (Privacy Policy) page accessible at `/politica-privacidad` with data protection and user rights
+  - Created Política de Cookies (Cookie Policy) page accessible at `/politica-cookies` with cookie usage and management information
+  - Added "Legal" section to footer with React Router Link components for navigation
+  - Installed and configured react-router-dom for client-side routing
+  - Set up BrowserRouter and Routes in main.jsx with dedicated routes for each legal page
+  - Legal pages have "Volver al inicio" back buttons using useNavigate hook for proper routing
+  - Each legal page has its own bookmarkable/shareable URL
   - All legal content is in Spanish only
 
 - **October 22, 2025**:
