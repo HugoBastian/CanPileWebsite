@@ -2,14 +2,29 @@ import { useState, useEffect } from 'react';
 import { MediaImage } from './components/MediaImage';
 import { MediaVideo } from './components/MediaVideo';
 import { translations } from './translations.js';
+import AvisoLegal from './components/AvisoLegal';
+import PoliticaPrivacidad from './components/PoliticaPrivacidad';
+import PoliticaCookies from './components/PoliticaCookies';
 
 export default function CanPileWireframe() {
   const [language, setLanguage] = useState('ca');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxContent, setLightboxContent] = useState(null);
   const [showFloatingButton, setShowFloatingButton] = useState(false);
+  const [currentPage, setCurrentPage] = useState('home');
 
   const t = translations[language];
+
+  // Handle legal page navigation
+  const showLegalPage = (page) => {
+    setCurrentPage(page);
+    window.scrollTo(0, 0);
+  };
+
+  const showHomePage = () => {
+    setCurrentPage('home');
+    window.scrollTo(0, 0);
+  };
 
   // Blur floating button when it becomes hidden to prevent focus trap
   useEffect(() => {
@@ -61,6 +76,17 @@ export default function CanPileWireframe() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Show legal pages if requested
+  if (currentPage === 'aviso-legal') {
+    return <AvisoLegal onClose={showHomePage} />;
+  }
+  if (currentPage === 'privacidad') {
+    return <PoliticaPrivacidad onClose={showHomePage} />;
+  }
+  if (currentPage === 'cookies') {
+    return <PoliticaCookies onClose={showHomePage} />;
+  }
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-800">
@@ -483,7 +509,7 @@ export default function CanPileWireframe() {
 
       {/* Footer */}
       <footer className="py-10 border-t bg-white">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm">
+        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-5 gap-8 text-sm">
           <div>
             <MediaImage 
               category="logos" 
@@ -513,6 +539,14 @@ export default function CanPileWireframe() {
             <ul className="space-y-1 text-neutral-600">
               <li><a href="https://www.instagram.com/vetcanpile/" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a></li>
               <li><a href="https://www.facebook.com/people/Cli%CC%81nica-Veterina%CC%80ria-Can-Pile%CC%81/100064230750842/" target="_blank" rel="noopener noreferrer" className="hover:underline">Facebook</a></li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold mb-2">Legal</p>
+            <ul className="space-y-1 text-neutral-600">
+              <li><button onClick={() => showLegalPage('aviso-legal')} className="hover:underline text-left">Aviso Legal</button></li>
+              <li><button onClick={() => showLegalPage('privacidad')} className="hover:underline text-left">Política de Privacidad</button></li>
+              <li><button onClick={() => showLegalPage('cookies')} className="hover:underline text-left">Política de Cookies</button></li>
             </ul>
           </div>
         </div>
