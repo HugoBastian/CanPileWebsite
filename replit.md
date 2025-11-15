@@ -31,6 +31,10 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
   - **Reviews Update**: Updated middle review with Alba Capuchino testimonial (5 stars)
   - Removed overall star rating display at the top of reviews section
   - All three reviews now show 5 stars each
+  - **Gallery Lightbox Improvements**: Fixed two UX issues with the image/video viewer
+  - Added body scroll lock when lightbox is open to prevent accidental page scrolling
+  - Fixed image/video sizing to properly fit within viewport (90% of screen width/height max)
+  - Images and videos now always display completely visible without exceeding screen bounds
 
 - **October 27, 2025**:
   - **Legal Pages with URL Routing**: Implemented three separate legal pages with proper URL-based routing

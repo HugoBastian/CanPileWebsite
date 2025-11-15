@@ -37,10 +37,16 @@ export default function CanPileWireframe() {
     };
 
     if (lightboxOpen) {
+      // Prevent body scroll when lightbox is open
+      document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
+    } else {
+      // Restore body scroll when lightbox is closed
+      document.body.style.overflow = 'unset';
     }
 
     return () => {
+      document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [lightboxOpen]);
@@ -531,7 +537,7 @@ export default function CanPileWireframe() {
           </button>
           
           <div 
-            className="w-full h-full flex items-center justify-center"
+            className="max-w-[90vw] max-h-[90vh] flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             {lightboxContent.type === "image" ? (
@@ -539,13 +545,13 @@ export default function CanPileWireframe() {
                 category={lightboxContent.category}
                 filename={lightboxContent.filename}
                 alt={t.gallery.expandedAlt}
-                className="max-w-[90vw] max-h-[90vh] w-auto h-auto object-contain rounded-lg"
+                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
               />
             ) : (
               <MediaVideo
                 category={lightboxContent.category}
                 filename={lightboxContent.filename}
-                className="max-w-[90vw] max-h-[90vh] w-auto h-auto rounded-lg"
+                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
                 autoplay={true}
                 loop={true}
                 muted={false}
