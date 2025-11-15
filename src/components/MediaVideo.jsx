@@ -4,7 +4,7 @@ import { useState } from 'react';
  * Media Video Component
  * Displays a video from App Storage with controls
  */
-export function MediaVideo({ category, filename, className = "", autoplay = false, muted = true, loop = false }) {
+export function MediaVideo({ category, filename, className = "", mediaClassName = "w-full h-full object-cover", autoplay = false, muted = true, loop = false }) {
   const [hasError, setHasError] = useState(false);
 
   const videoUrl = `/public-objects/${category}/${filename}`;
@@ -20,7 +20,7 @@ export function MediaVideo({ category, filename, className = "", autoplay = fals
   return (
     <video
       src={videoUrl}
-      className={`w-full h-full object-cover ${className}`}
+      className={`${mediaClassName} ${className}`}
       controls={!autoplay}
       autoPlay={autoplay}
       muted={muted}

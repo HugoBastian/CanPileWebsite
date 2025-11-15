@@ -4,7 +4,7 @@ import { useState } from 'react';
  * Media Image Component
  * Displays an image from App Storage with lazy loading and error handling
  */
-export function MediaImage({ category, filename, alt, className = "" }) {
+export function MediaImage({ category, filename, alt, className = "", mediaClassName = "w-full h-full object-cover" }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
@@ -26,7 +26,7 @@ export function MediaImage({ category, filename, alt, className = "" }) {
       <img
         src={imageUrl}
         alt={alt}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
+        className={`${mediaClassName} transition-opacity duration-300 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         loading="lazy"

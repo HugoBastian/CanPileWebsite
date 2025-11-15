@@ -537,7 +537,7 @@ export default function CanPileWireframe() {
           </button>
           
           <div 
-            className="max-w-[90vw] max-h-[90vh] flex items-center justify-center"
+            className="flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             {lightboxContent.type === "image" ? (
@@ -545,13 +545,15 @@ export default function CanPileWireframe() {
                 category={lightboxContent.category}
                 filename={lightboxContent.filename}
                 alt={t.gallery.expandedAlt}
-                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
+                className="rounded-lg"
+                mediaClassName="max-w-[90vw] max-h-[90vh] object-contain"
               />
             ) : (
               <MediaVideo
                 category={lightboxContent.category}
                 filename={lightboxContent.filename}
-                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
+                className="rounded-lg"
+                mediaClassName="max-w-[90vw] max-h-[90vh] object-contain"
                 autoplay={true}
                 loop={true}
                 muted={false}
