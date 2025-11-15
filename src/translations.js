@@ -40,7 +40,8 @@ export const translations = {
     },
     gallery: {
       title: "Galeria",
-      subtitle: "Imatges i vídeos destacats de la clínica i els pacients. Feu clic per ampliar.",
+      subtitle: "Segueix-nos a Instagram per veure més fotos dels nostres pacients i informació!",
+      instagramButton: "Segueix-nos a Instagram",
       imageAlt: "Galeria",
       expandedAlt: "Galeria ampliada"
     },
@@ -144,7 +145,8 @@ export const translations = {
     },
     gallery: {
       title: "Galería",
-      subtitle: "Imágenes y vídeos destacados de la clínica y los pacientes. Haz clic para ampliar.",
+      subtitle: "Síguenos en Instagram para ver más fotos de nuestros pacientes y información!",
+      instagramButton: "Síguenos en Instagram",
       imageAlt: "Galería",
       expandedAlt: "Galería ampliada"
     },
