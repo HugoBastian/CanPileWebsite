@@ -23,7 +23,7 @@ export const translations = {
       cta: "Coneix el nostre equip →"
     },
     services: {
-      title: "Serveis",
+      title: "Serveis Medicina Interna",
       subtitle: "Després de més de 30 anys d'experiència, seguim apassionats per la medicina interna i pel repte que suposa cada cas.",
       lab: "Laboratori Clínic",
       labDesc: "Disposem d'aparells d'analítica pròpia i microscopi que ens permeten realitzar estudis complets i ràpids a la clínica. La citologia és una de les nostres grans passions i resulta clau per aconseguir un diagnòstic precís.",
@@ -127,7 +127,7 @@ export const translations = {
       cta: "Conoce nuestro equipo →"
     },
     services: {
-      title: "Servicios",
+      title: "Servicios Medicina Interna",
       subtitle: "Tras más de 30 años de experiencia, seguimos apasionados por la medicina interna y por el desafío que supone cada caso.",
       lab: "Laboratorio Clínico",
       labDesc: "Disponemos de aparatos de analítica propia y microscopio que nos permiten realizar estudios completos y rápidos en la clínica. La citología es una de nuestras grandes pasiones y resulta clave para lograr un diagnóstico preciso.",
