@@ -224,7 +224,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Intro */}
-      <section className="py-16 border-t">
+      <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
           <MediaImage 
             category="services" 
@@ -394,7 +394,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Team */}
-      <section id="team" className="py-16 scroll-mt-20">
+      <section id="team" className="py-16 border-y scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">{t.team.title}</h2>
           <div className="mt-8 grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
