@@ -41,7 +41,7 @@ export const translations = {
     gallery: {
       title: "Galeria",
       subtitle: "Segueix-nos a Instagram per veure més fotos dels nostres pacients i informació!",
-      instagramButton: "Segueix-nos a Instagram",
+      instagramButton: "Clica aquí!",
       imageAlt: "Galeria",
       expandedAlt: "Galeria ampliada"
     },
@@ -146,7 +146,7 @@ export const translations = {
     gallery: {
       title: "Galería",
       subtitle: "Síguenos en Instagram para ver más fotos de nuestros pacientes y información!",
-      instagramButton: "Síguenos en Instagram",
+      instagramButton: "¡Haz clic aquí!",
       imageAlt: "Galería",
       expandedAlt: "Galería ampliada"
     },

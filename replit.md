@@ -24,8 +24,9 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
   - Updated all service images to match specific services: Labratoria2.webp, RadiologiaDigital.webp, Cirurgia3.webp, Oncologia.webp, SalaDeDespedida.webp, SpecialistServices.webp
   - Fixed section borders: Team section now has white background and visible border with Contact section
   - **Gallery Instagram CTA**: Replaced gallery subtitle with Instagram call-to-action
-  - Added prominent Instagram button with gradient purple-pink styling and Instagram icon
-  - New text: "Síguenos en Instagram para ver más fotos de nuestros pacientes y información!" / "Segueix-nos a Instagram per veure més fotos dels nostres pacients i informació!"
+  - Added Instagram button with clinic color scheme (#227461 teal/green) and Instagram icon
+  - Button text: "¡Haz clic aquí!" / "Clica aquí!"
+  - CTA text: "Síguenos en Instagram para ver más fotos de nuestros pacientes y información!" / "Segueix-nos a Instagram per veure més fotos dels nostres pacients i informació!"
   - Button opens Instagram profile (@vetcanpile) in new tab
 
 - **October 27, 2025**:
