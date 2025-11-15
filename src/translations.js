@@ -24,15 +24,19 @@ export const translations = {
     },
     services: {
       title: "Serveis",
-      viewAll: "Veure tots els serveis",
-      radiology: "Radiologia",
-      ultrasound: "Ecografia",
+      subtitle: "Després de més de 30 anys d'experiència, seguim apassionats per la medicina interna i pel repte que suposa cada cas.",
+      lab: "Laboratori Clínic",
+      labDesc: "Disposem d'aparells d'analítica pròpia i microscopi que ens permeten realitzar estudis complets i ràpids a la clínica. La citologia és una de les nostres grans passions i resulta clau per aconseguir un diagnòstic precís.",
+      radiology: "Radiologia Digital",
+      radiologyDesc: "Realitzem diagnòstics digitals per imatge propis, cosa que ens permet obtenir resultats precisos i fiables per a cada pacient.",
       surgery: "Cirurgia",
-      lab: "Laboratori",
+      surgeryDesc: "Disposem d'un quiròfan equipat amb anestèsia ventilatòria avançada, que ens permet realitzar cirurgies segures i amb la màxima cura.",
       oncology: "Oncologia",
-      other: "Altres especialitats",
-      description: "Descripció breu de 2–3 línies. Botó per a més info.",
-      learnMore: "Saber-ne més"
+      oncologyDesc: "Valorem cada cas amb rigor, sensibilitat i una atenció totalment individualitzada.",
+      farewell: "Sala d'Acomiadament",
+      farewellDesc: "Disposem d'una sala exclusiva a tot el Vallès perquè l'acomiadament sigui íntim i serè, i poder acompanyar el vostre company en el seu últim adéu.",
+      specialists: "Serveis d'Especialistes",
+      specialistsDesc: "Comptem amb serveis d'especialistes en ecografia, oftalmologia, traumatologia i endoscòpia de mínima invasió."
     },
     gallery: {
       title: "Galeria",
@@ -124,15 +128,19 @@ export const translations = {
     },
     services: {
       title: "Servicios",
-      viewAll: "Ver todos los servicios",
-      radiology: "Radiología",
-      ultrasound: "Ecografía",
+      subtitle: "Tras más de 30 años de experiencia, seguimos apasionados por la medicina interna y por el desafío que supone cada caso.",
+      lab: "Laboratorio Clínico",
+      labDesc: "Disponemos de aparatos de analítica propia y microscopio que nos permiten realizar estudios completos y rápidos en la clínica. La citología es una de nuestras grandes pasiones y resulta clave para lograr un diagnóstico preciso.",
+      radiology: "Radiología Digital",
+      radiologyDesc: "Realizamos diagnósticos digitales por imagen propios, lo que nos permite obtener resultados precisos y fiables para cada paciente.",
       surgery: "Cirugía",
-      lab: "Laboratorio",
+      surgeryDesc: "Disponemos de un quirófano equipado con anestesia ventilatoria avanzada, que nos permite realizar cirugías seguras y con el máximo cuidado.",
       oncology: "Oncología",
-      other: "Otras especialidades",
-      description: "Descripción breve de 2–3 líneas. Botón para más info.",
-      learnMore: "Saber más"
+      oncologyDesc: "Valoramos cada caso con rigor, sensibilidad y una atención totalmente individualizada.",
+      farewell: "Sala de Despedida",
+      farewellDesc: "Disponemos de una sala exclusiva en todo el Vallès para que la despedida sea íntima y serena, y poder acompañar a vuestro compañero en su último adiós.",
+      specialists: "Servicios de Especialistas",
+      specialistsDesc: "Contamos con servicios de especialistas en ecografía, oftalmología, traumatología y endoscopia de mínima invasión."
     },
     gallery: {
       title: "Galería",

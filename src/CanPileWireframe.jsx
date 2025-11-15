@@ -242,21 +242,19 @@ export default function CanPileWireframe() {
         </div>
       </section>
 
-      {/* Services preview */}
+      {/* Services */}
       <section id="services" className="py-16 bg-white border-y scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-end justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">{t.services.title}</h2>
-            <a className="text-sm text-[#227461] underline hover:text-[#1a5a4a]" href="#">{t.services.viewAll}</a>
-          </div>
+          <h2 className="text-2xl md:text-3xl font-semibold">{t.services.title}</h2>
+          <p className="mt-3 text-neutral-600 max-w-3xl">{t.services.subtitle}</p>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { nameKey: "radiology", image: "Radiologia.webp" },
-              { nameKey: "ultrasound", image: "Ecografia.webp" },
-              { nameKey: "surgery", image: "Cirurgia2.webp" },
-              { nameKey: "lab", image: "Labratoria.webp" },
-              { nameKey: "oncology", image: "BlueLight.webp" },
-              { nameKey: "other", image: "Telescope.webp" }
+              { nameKey: "lab", descKey: "labDesc", image: "Labratoria.webp" },
+              { nameKey: "radiology", descKey: "radiologyDesc", image: "Radiologia.webp" },
+              { nameKey: "surgery", descKey: "surgeryDesc", image: "Cirurgia2.webp" },
+              { nameKey: "oncology", descKey: "oncologyDesc", image: "BlueLight.webp" },
+              { nameKey: "farewell", descKey: "farewellDesc", image: "Waiting-room.webp" },
+              { nameKey: "specialists", descKey: "specialistsDesc", image: "Telescope.webp" }
             ].map((service) => (
               <div key={service.nameKey} className="rounded-2xl border p-5 bg-white hover:shadow-lg transition-shadow">
                 <MediaImage 
@@ -265,9 +263,8 @@ export default function CanPileWireframe() {
                   alt={t.services[service.nameKey]} 
                   className="h-36 rounded-xl mb-4 object-cover w-full"
                 />
-                <h3 className="font-semibold">{t.services[service.nameKey]}</h3>
-                <p className="text-sm text-neutral-600 mt-1">{t.services.description}</p>
-                <button className="mt-4 text-sm text-[#227461] underline hover:text-[#1a5a4a]">{t.services.learnMore}</button>
+                <h3 className="font-semibold mb-2">{t.services[service.nameKey]}</h3>
+                <p className="text-sm text-neutral-600">{t.services[service.descKey]}</p>
               </div>
             ))}
           </div>
