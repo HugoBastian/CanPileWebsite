@@ -342,26 +342,7 @@ export default function CanPileWireframe() {
       {/* Testimonials */}
       <section className="py-16 bg-white border-y">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center gap-3">
-            <h2 className="text-2xl md:text-3xl font-semibold">{t.reviews.title}</h2>
-            <div className="flex items-center gap-1">
-              {[1,2,3,4].map((star) => (
-                <svg key={star} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-              <svg className="w-5 h-5 relative" viewBox="0 0 20 20">
-                <defs>
-                  <linearGradient id="half-star">
-                    <stop offset="50%" stopColor="rgb(250 204 21)" />
-                    <stop offset="50%" stopColor="rgb(212 212 212)" />
-                  </linearGradient>
-                </defs>
-                <path fill="url(#half-star)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <span className="ml-2 text-sm text-neutral-600 font-medium">4.5</span>
-            </div>
-          </div>
+          <h2 className="text-2xl md:text-3xl font-semibold">{t.reviews.title}</h2>
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             <div className="rounded-2xl border p-5 bg-neutral-50">
               <div className="flex items-center gap-1 mb-3">
@@ -376,17 +357,14 @@ export default function CanPileWireframe() {
             </div>
             <div className="rounded-2xl border p-5 bg-neutral-50">
               <div className="flex items-center gap-1 mb-3">
-                {[1,2,3,4].map((star) => (
+                {[1,2,3,4,5].map((star) => (
                   <svg key={star} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
-                <svg className="w-4 h-4 text-neutral-300" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
               </div>
-              <p className="text-sm italic">"Gui por primera vez pirque necesité llevar a la perrita al oftalmólogo. Las veterinarias muy amables y atentas. El especialista viene a la clínica bajo cita previa, muy profesional, con herramienta y tecnología que pudo hacer varias pruebas en situ. Se tomóel tiempo que necesitamos sin meter prisa y explicando todo. Muy sachosfecha con el trato"</p>
-              <p className="mt-3 text-xs text-neutral-500 font-medium">Maria Romero</p>
+              <p className="text-sm italic">"Me recomendaron esta clínica para una Segunda opinión con mi perrete. El trato fue maravilloso tanto conmigo como con nuestro perro. La experiencia y profesionalidad de Esther es lo que destacaría. Me fui con todo claro y muy contenta. Muy recomendable."</p>
+              <p className="mt-3 text-xs text-neutral-500 font-medium">Alba Capuchino</p>
             </div>
             <div className="rounded-2xl border p-5 bg-neutral-50">
               <div className="flex items-center gap-1 mb-3">

@@ -26,8 +26,11 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
   - **Gallery Instagram CTA**: Replaced gallery subtitle with Instagram call-to-action
   - Added Instagram button with clinic color scheme (#227461 teal/green) and Instagram icon
   - Button text: "¡Haz clic aquí!" / "Clica aquí!"
-  - CTA text: "Síguenos en Instagram para ver más fotos de nuestros pacientes y información!" / "Segueix-nos a Instagram per veure més fotos dels nostres pacients i informació!"
+  - CTA text: "Síguenos en Instagram para ver más fotos de nuestros pacientes y información!" / "Segueix-nos a Instagram per veure más fotos dels nostres pacients i informació!"
   - Button opens Instagram profile (@vetcanpile) in new tab
+  - **Reviews Update**: Updated middle review with Alba Capuchino testimonial (5 stars)
+  - Removed overall star rating display at the top of reviews section
+  - All three reviews now show 5 stars each
 
 - **October 27, 2025**:
   - **Legal Pages with URL Routing**: Implemented three separate legal pages with proper URL-based routing
