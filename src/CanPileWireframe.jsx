@@ -170,6 +170,58 @@ export default function CanPileWireframe() {
         </div>
       </section>
 
+      {/* Hours & Location */}
+      <section id="hours" className="py-16 bg-white border-y scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.title}</h2>
+            <div className="mt-5 space-y-3 text-sm">
+              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
+                <span className="font-medium">{t.hours.monday}</span>
+                <span className="text-neutral-600">09:30–14:30 · 17:00–19:30</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
+                <span className="font-medium">{t.hours.tuesday}</span>
+                <span className="text-neutral-600">09:30–14:30</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
+                <span className="font-medium">{t.hours.wednesday}</span>
+                <span className="text-neutral-600">09:30–14:30</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
+                <span className="font-medium">{t.hours.thursday}</span>
+                <span className="text-neutral-600">09:30–14:30 · 17:00–19:30</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
+                <span className="font-medium">{t.hours.friday}</span>
+                <span className="text-neutral-600">09:30–14:30</span>
+              </div>
+              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
+                <span className="font-medium">{t.hours.weekendLabel}</span>
+                <span className="text-neutral-600 font-semibold">{t.hours.closed}</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.location}</h2>
+            <div className="mt-5 aspect-video rounded-2xl overflow-hidden border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.0!2d2.2321075!3d41.6414639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDM4JzI5LjMiTiAywrAxMyc1NS42IkU!5e0!3m2!1sen!2ses!4v1729512000000"
+                width="100%"
+                height="100%"
+                style={{border:0}}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={t.hours.mapTitle}
+              ></iframe>
+            </div>
+            <p className="mt-3 text-neutral-600 text-sm">
+              {t.hours.addressFull}
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Intro */}
       <section className="py-16 border-t">
@@ -380,59 +432,6 @@ export default function CanPileWireframe() {
                 <li>{t.team.diana.bullet4}</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Hours & Location */}
-      <section id="hours" className="py-16 bg-white border-y scroll-mt-20">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.title}</h2>
-            <div className="mt-5 space-y-3 text-sm">
-              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">{t.hours.monday}</span>
-                <span className="text-neutral-600">09:30–14:30 · 17:00–19:30</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">{t.hours.tuesday}</span>
-                <span className="text-neutral-600">09:30–14:30</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">{t.hours.wednesday}</span>
-                <span className="text-neutral-600">09:30–14:30</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">{t.hours.thursday}</span>
-                <span className="text-neutral-600">09:30–14:30 · 17:00–19:30</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">{t.hours.friday}</span>
-                <span className="text-neutral-600">09:30–14:30</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border p-3 bg-neutral-50">
-                <span className="font-medium">{t.hours.weekendLabel}</span>
-                <span className="text-neutral-600 font-semibold">{t.hours.closed}</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.location}</h2>
-            <div className="mt-5 aspect-video rounded-2xl overflow-hidden border">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.0!2d2.2321075!3d41.6414639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDM4JzI5LjMiTiAywrAxMyc1NS42IkU!5e0!3m2!1sen!2ses!4v1729512000000"
-                width="100%"
-                height="100%"
-                style={{border:0}}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={t.hours.mapTitle}
-              ></iframe>
-            </div>
-            <p className="mt-3 text-neutral-600 text-sm">
-              {t.hours.addressFull}
-            </p>
           </div>
         </div>
       </section>
