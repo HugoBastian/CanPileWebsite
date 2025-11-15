@@ -35,6 +35,10 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
   - Added body scroll lock when lightbox is open to prevent accidental page scrolling
   - Fixed image/video sizing to properly fit within viewport (90% of screen width/height max)
   - Images and videos now always display completely visible without exceeding screen bounds
+  - **MediaImage/MediaVideo Components**: Added `mediaClassName` prop to both components for flexible styling
+  - New prop allows overriding default `w-full h-full object-cover` classes on actual media elements
+  - Lightbox now uses `mediaClassName="max-w-[90vw] max-h-[90vh] object-contain"` to constrain vertical images
+  - Preserves existing component behavior while enabling viewport-aware sizing for lightbox use case
 
 - **October 27, 2025**:
   - **Legal Pages with URL Routing**: Implemented three separate legal pages with proper URL-based routing
