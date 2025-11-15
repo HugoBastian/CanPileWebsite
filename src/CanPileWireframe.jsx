@@ -249,12 +249,12 @@ export default function CanPileWireframe() {
           <p className="mt-3 text-neutral-600 max-w-3xl">{t.services.subtitle}</p>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { nameKey: "lab", descKey: "labDesc", image: "Labratoria.webp" },
-              { nameKey: "radiology", descKey: "radiologyDesc", image: "Radiologia.webp" },
-              { nameKey: "surgery", descKey: "surgeryDesc", image: "Cirurgia2.webp" },
-              { nameKey: "oncology", descKey: "oncologyDesc", image: "BlueLight.webp" },
-              { nameKey: "farewell", descKey: "farewellDesc", image: "Waiting-room.webp" },
-              { nameKey: "specialists", descKey: "specialistsDesc", image: "Telescope.webp" }
+              { nameKey: "lab", descKey: "labDesc", image: "Labratoria2.webp" },
+              { nameKey: "radiology", descKey: "radiologyDesc", image: "RadiologiaDigital.webp" },
+              { nameKey: "surgery", descKey: "surgeryDesc", image: "Cirurgia3.webp" },
+              { nameKey: "oncology", descKey: "oncologyDesc", image: "Oncologia.webp" },
+              { nameKey: "farewell", descKey: "farewellDesc", image: "SalaDeDespedida.webp" },
+              { nameKey: "specialists", descKey: "specialistsDesc", image: "SpecialistServices.webp" }
             ].map((service) => (
               <div key={service.nameKey} className="rounded-2xl border p-5 bg-white hover:shadow-lg transition-shadow">
                 <MediaImage 

@@ -13,6 +13,7 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 ## Recent Changes
 - **November 15, 2025**:
   - **Services Section Update**: Completely revamped services section with new content and structure
+  - Updated section title to "Serveis Medicina Interna" / "Servicios Medicina Interna"
   - Updated to 6 specific services: Laboratorio Clínico, Radiología Digital, Cirugía, Oncología, Sala de Despedida, and Servicios de Especialistas
   - Removed "Ecografía" service (now under Servicios de Especialistas)
   - Added comprehensive bilingual descriptions for each service (Catalan and Spanish)
@@ -20,6 +21,7 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
   - Removed "Veure tots els serveis" / "Ver todos los servicios" button
   - Removed all individual "Saber-ne més" / "Saber más" buttons from service cards
   - Each service now displays full description directly in the card
+  - Updated all service images to match specific services: Labratoria2.webp, RadiologiaDigital.webp, Cirurgia3.webp, Oncologia.webp, SalaDeDespedida.webp, SpecialistServices.webp
   - Fixed section borders: Team section now has white background and visible border with Contact section
 
 - **October 27, 2025**:
