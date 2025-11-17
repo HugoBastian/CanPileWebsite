@@ -11,6 +11,11 @@ This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínic
 - **Status**: Wireframe/Mockup stage
 
 ## Recent Changes
+- **November 17, 2025**:
+  - **About Section Scroll Fix**: Increased scroll margin on About section heading from scroll-mt-20 to scroll-mt-24
+  - Fixed "Sobre nosaltres" button scroll alignment to prevent header from cutting off section title
+  - Section now properly aligns below sticky header when navigating from hero CTA button
+
 - **November 15, 2025**:
   - **Services Section Update**: Completely revamped services section with new content and structure
   - Updated section title to "Serveis Medicina Interna" / "Servicios Medicina Interna"

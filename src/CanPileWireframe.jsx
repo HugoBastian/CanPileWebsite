@@ -239,7 +239,7 @@ export default function CanPileWireframe() {
             className="aspect-[4/3] rounded-2xl object-cover w-full"
           />
           <div>
-            <h2 id="about" className="text-2xl md:text-3xl font-semibold scroll-mt-20">{t.about.title}</h2>
+            <h2 id="about" className="text-2xl md:text-3xl font-semibold scroll-mt-24">{t.about.title}</h2>
             <p className="mt-3 text-neutral-600">{t.about.intro}</p>
             <div className="mt-5">
               <a href="#team" className="text-[#227461] underline hover:text-[#1a5a4a]">{t.about.cta}</a>
