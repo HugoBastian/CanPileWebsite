@@ -1,216 +1,43 @@
 # Can Pilé Veterinary Clinic Website
 
 ## Overview
-This is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínica Veterinària Can Pilé), a mockup project for Ayudavets/Solucionia client. The website is built with React, Vite, and Tailwind CSS.
+This project is a React-based website wireframe for Can Pilé Veterinary Clinic (Clínica Veterinària Can Pilé), a mockup for the Ayudavets/Solucionia client. The website functions as a single-page application, built with React, Vite, and Tailwind CSS, featuring bilingual support (Catalan and Castellano/Spanish) and an interactive media gallery. Its primary purpose is to provide essential clinic information, including services, team profiles, hours, location, and contact details, with a focus on a professional and user-friendly interface.
 
-## Project Information
-- **Type**: Single-page veterinary clinic website
-- **Languages**: Catalan (ca) and Castellano/Spanish (es) with toggle
-- **Framework**: React + Vite
-- **Styling**: Tailwind CSS
-- **Status**: Wireframe/Mockup stage
+## User Preferences
+I prefer iterative development with clear, concise explanations for each step. Please ask before making major architectural changes or refactoring significant portions of the codebase. I value well-structured, readable code. I expect the agent to maintain the established bilingual (Catalan/Spanish) content strategy. Do not make changes to the `MEDIA_SETUP.md` file.
 
-## Recent Changes
-- **November 17, 2025**:
-  - **About Section Scroll Fix**: Increased scroll margin on About section heading from scroll-mt-20 to scroll-mt-24
-  - Fixed "Sobre nosaltres" button scroll alignment to prevent header from cutting off section title
-  - Section now properly aligns below sticky header when navigating from hero CTA button
+## System Architecture
 
-- **November 15, 2025**:
-  - **Services Section Update**: Completely revamped services section with new content and structure
-  - Updated section title to "Serveis Medicina Interna" / "Servicios Medicina Interna"
-  - Updated to 6 specific services: Laboratorio Clínico, Radiología Digital, Cirugía, Oncología, Sala de Despedida, and Servicios de Especialistas
-  - Removed "Ecografía" service (now under Servicios de Especialistas)
-  - Added comprehensive bilingual descriptions for each service (Catalan and Spanish)
-  - Added section subtitle highlighting 30+ years of experience and passion for internal medicine
-  - Removed "Veure tots els serveis" / "Ver todos los servicios" button
-  - Removed all individual "Saber-ne més" / "Saber más" buttons from service cards
-  - Each service now displays full description directly in the card
-  - Updated all service images to match specific services: Labratoria2.webp, RadiologiaDigital.webp, Cirurgia3.webp, Oncologia.webp, SalaDeDespedida.webp, SpecialistServices.webp
-  - Fixed section borders: Team section now has white background and visible border with Contact section
-  - **Gallery Instagram CTA**: Replaced gallery subtitle with Instagram call-to-action
-  - Added Instagram button with clinic color scheme (#227461 teal/green) and Instagram icon
-  - Button text: "¡Haz clic aquí!" / "Clica aquí!"
-  - CTA text: "Síguenos en Instagram para ver más fotos de nuestros pacientes y información!" / "Segueix-nos a Instagram per veure más fotos dels nostres pacients i informació!"
-  - Button opens Instagram profile (@vetcanpile) in new tab
-  - **Reviews Update**: Updated middle review with Alba Capuchino testimonial (5 stars)
-  - Removed overall star rating display at the top of reviews section
-  - All three reviews now show 5 stars each
-  - **Gallery Lightbox Improvements**: Fixed two UX issues with the image/video viewer
-  - Added body scroll lock when lightbox is open to prevent accidental page scrolling
-  - Fixed image/video sizing to properly fit within viewport (90% of screen width/height max)
-  - Images and videos now always display completely visible without exceeding screen bounds
-  - **MediaImage/MediaVideo Components**: Added `mediaClassName` prop to both components for flexible styling
-  - New prop allows overriding default `w-full h-full object-cover` classes on actual media elements
-  - Lightbox now uses `mediaClassName="max-w-[90vw] max-h-[90vh] object-contain"` to constrain vertical images
-  - Preserves existing component behavior while enabling viewport-aware sizing for lightbox use case
+### UI/UX Decisions
+The website features a clean, responsive design with a neutral color scheme. Key UI/UX elements include a sticky header with a language switcher, a full-screen hero section with an autoplay video background, and an interactive image/video gallery with a lightbox modal. Navigation is facilitated by scroll-to-section links and a floating call button that appears on scroll. Legal pages are implemented with dedicated URL routing.
 
-- **October 27, 2025**:
-  - **Legal Pages with URL Routing**: Implemented three separate legal pages with proper URL-based routing
-  - Created Aviso Legal (Legal Notice) page accessible at `/aviso-legal` with site responsibility and intellectual property information
-  - Created Política de Privacidad (Privacy Policy) page accessible at `/politica-privacidad` with data protection and user rights
-  - Created Política de Cookies (Cookie Policy) page accessible at `/politica-cookies` with cookie usage and management information
-  - Added "Legal" section to footer with React Router Link components for navigation
-  - Installed and configured react-router-dom for client-side routing
-  - Set up BrowserRouter and Routes in main.jsx with dedicated routes for each legal page
-  - Legal pages have "Volver al inicio" back buttons using useNavigate hook for proper routing
-  - Each legal page has its own bookmarkable/shareable URL
-  - All legal content is in Spanish only
+### Technical Implementations
+- **Frontend**: Developed with React 19.2.0, using Vite 7.1.10 for tooling and Tailwind CSS 4.1.14 for styling.
+- **Bilingual Support**: Implemented through a centralized `translations.js` file and a language toggle in the header, enabling dynamic translation of all user-facing text.
+- **Routing**: `react-router-dom` is used for client-side routing, particularly for legal pages (Aviso Legal, Política de Privacidad, Política de Cookies).
+- **Media Handling**: Custom React components (`MediaImage`, `MediaVideo`, `MediaGallery`) manage media display. A lightbox component provides an interactive viewing experience with keyboard accessibility and body scroll lock.
+- **Scroll Tracking**: Implemented to control the visibility of the floating call button and ensure proper scroll alignment for sticky header navigation.
+- **SEO**: Basic SEO meta tags (description, keywords) and a professional favicon have been integrated.
 
-- **October 22, 2025**:
-  - **Floating Call Button**: Added fixed-position call button in bottom-right that appears when scrolling past hero midpoint
-  - Implemented scroll tracking with useEffect to show/hide button when half of hero section is scrolled past
-  - Button features smooth bidirectional animations: slide-up + fade-in when appearing, slide-down + fade-out when disappearing (0.4s transitions)
-  - Added complete accessibility support: aria-hidden, tabIndex management, and automatic focus removal when hidden
-  - **Hero CTA Enhancement**: Added phone SVG icon before "Demana cita" button text (matching floating button icon)
-  - **Contact Section**: Redesigned layout with side-by-side format (Waiting-room.webp image on left, buttons on right)
-  - Made contact buttons smaller and more compact (reduced padding, icon size, and font sizes)
-  - Added scroll margin (scroll-mt-20) to all sections for proper navigation with sticky header
-  - **Reviews**: Changed star rating display from 4.0 to 4.5 stars (using half-star gradient) to better represent 4.4 average
+### Feature Specifications
+- **Header/Navigation**: Sticky, with logo, navigation links, language toggle, and social media icons.
+- **Hero Section**: Full-screen video background with a call to action.
+- **About/Intro**: Clinic introduction, address, and link to team section.
+- **Services**: Detailed grid of veterinary services with bilingual descriptions and relevant images.
+- **Gallery**: Interactive grid of photos and videos with an expandable lightbox.
+- **Testimonials**: Customer reviews with average rating and testimonials.
+- **Team**: Profiles of key staff members with bios and photos.
+- **Hours & Location**: Accurate business hours and embedded Google Maps.
+- **Contact**: Prominent display of phone and email; appointments are phone-based.
+- **Footer**: Site links and social media icons.
 
-- **October 21, 2025**:
-  - **Language Toggle**: Implemented complete bilingual support (Catalan/Castellano) with language switcher in header
-  - Created comprehensive translations.js file with all website content in both CA and ES
-  - Added language state and toggle button (CA | ES) in header navigation
-  - All user-facing text now translates dynamically except user review testimonials
-  - Translated sections: header, navigation, hero, about, services, gallery, team, hours, contact, footer
-  - **Lightbox Fix**: Fixed modal sizing to properly constrain images/videos to 90% viewport while maintaining aspect ratio
-  - Changed lightbox container to use full flex layout with max-w-[90vw] max-h-[90vh] constraints
-  - Implemented interactive gallery lightbox/modal with full keyboard accessibility (ESC to close)
-  - Changed hero "Truca" button to scroll to About section, renamed to "Sobre nosaltres"
-  - Added visual divider border between hero and about sections
-  - Updated team section to 2 members: Ester Sarto Jorba and Diana Gambarte with full professional bios
-  - Updated team photos to EsterConPerro.webp and DanaConPerro4.webp
-  - Changed "Més sobre nosaltres" button to "Coneix el nostre equip" linking to team section
-  - Updated service images: Cirurgia uses Cirurgia2.webp, Altres especialitat uses Telescope.webp
-  - Updated gallery with 7 specific images + 1 video (BrownLabVid.MP4.webm)
-  - Added customer reviews section with 4.5-star average rating and 3 testimonials
-  - Implemented hero.mp4 video as autoplay background in hero section
-  - Updated business hours to accurate schedule (Mon & Thu: 09:30–14:30, 17:00–19:30; Tue/Wed/Fri: 09:30–14:30; Sat & Sun: Closed)
-  - Updated all contact information throughout site (Carrer Verge de la Salut, 7; Phone: 938 446 939; Email: vetcanpile@hotmail.es)
-  - Added functional social media links to header and footer (Instagram, Facebook)
-  - Removed association badges section (not applicable)
-  - Removed contact form (appointments by phone only)
-  - Implemented working Google Maps embed with clinic location coordinates
-  - Made footer "Nosaltres" link navigate to "Sobre la clínica" section
+### System Design Choices
+The project is architected as a single-page application. Media assets are managed externally via Replit App Storage and served through a custom Express backend. The development environment is configured to run both frontend and backend concurrently, enabling a full-stack local development experience. Deployment is set up for autoscale on Replit due to the backend dependency, requiring both servers to run in production.
 
-- **October 20, 2025**:
-  - Integrated Replit App Storage for media management (photos/videos)
-  - Created backend server infrastructure with Express
-  - Built media display components (MediaImage, MediaVideo, MediaGallery)
-  - Created media library data structure (JSON-based)
-  - Added CORS support and API proxy configuration
-  - Created comprehensive media setup documentation (MEDIA_SETUP.md)
-  
-- **October 17, 2025**: 
-  - Imported GitHub project to Replit
-  - Set up complete React/Vite development environment
-  - Configured Vite to work with Replit proxy (host: 0.0.0.0, port: 5000, allowedHosts: true)
-  - Integrated existing JSX component into proper React project structure
-  - Configured workflow for development server
-  - Set up deployment configuration for autoscale
+## External Dependencies
 
-## Project Architecture
-
-### Tech Stack
-- **Frontend**: React 19.2.0
-- **Build Tool**: Vite 7.1.10
-- **Styling**: Tailwind CSS 4.1.14
-- **Dev Server**: Vite dev server on port 5000
-- **Backend**: Express 5.1.0 (port 3001)
-- **Media Storage**: Replit App Storage (Google Cloud Storage)
-- **TypeScript Runtime**: tsx 4.20.6
-
-### Directory Structure
-```
-/
-├── src/
-│   ├── components/
-│   │   ├── MediaImage.jsx      # Image component with lazy loading
-│   │   ├── MediaVideo.jsx      # Video component with controls
-│   │   └── MediaGallery.jsx    # Gallery grid component
-│   ├── data/
-│   │   └── mediaLibrary.json   # Media metadata and references
-│   ├── CanPileWireframe.jsx    # Main component with all website sections
-│   ├── main.jsx                # React entry point
-│   ├── App.jsx                 # App wrapper component
-│   └── index.css               # Tailwind imports
-├── server/
-│   ├── index.ts                # Express server entry point
-│   ├── routes.ts               # API routes for media serving
-│   ├── objectStorage.ts        # App Storage service
-│   └── objectAcl.ts            # Access control for storage
-├── index.html                  # HTML entry point
-├── vite.config.js              # Vite configuration (with proxy and Replit settings)
-├── tailwind.config.js          # Tailwind configuration
-├── postcss.config.js           # PostCSS configuration
-├── MEDIA_SETUP.md              # Media upload and configuration guide
-└── package.json                # Dependencies and scripts
-```
-
-### Website Sections
-The website includes the following sections:
-1. **Header/Navigation**: Sticky header with logo, navigation menu, and social media icons (Instagram, Facebook)
-2. **Hero Section**: Full-screen hero with hero.mp4 video background and "Sobre nosaltres" scroll button
-3. **About/Intro**: Brief clinic introduction with accurate address and "Coneix el nostre equip" button
-4. **Services**: Grid of veterinary services (Radiology, Ultrasound, Surgery, Lab, Oncology, etc.) with updated images
-5. **Gallery**: Interactive photo/video gallery with expandable lightbox modal (click to view, ESC/click to close)
-6. **Testimonials**: Customer reviews with 4.4-star rating and 3 real testimonials
-7. **Team**: 2 staff profiles (Ester Sarto Jorba and Diana Gambarte) with professional bios and photos
-8. **Hours & Location**: Accurate business hours and embedded Google Maps
-9. **Contact**: Prominent phone and email cards (no form - appointments by phone)
-10. **Footer**: Site links and social media (Facebook, Instagram)
-
-### Development
-- Run `npm run dev` to start frontend server on port 5000
-- Run `npm run dev:backend` to start backend server on port 3001
-- Run `npm run dev:all` to start both servers concurrently
-- Run `npm run build` to create production build
-- Run `npm run preview` to preview production build
-
-### Media Management
-- Media files are stored in Replit App Storage
-- Upload files through the App Storage UI in Replit Tools panel
-- Organize files in folders: `gallery/`, `services/`, `team/`, `hero/`
-- See `MEDIA_SETUP.md` for detailed upload instructions
-- React components automatically fetch and display media from storage
-
-### Deployment
-- Configured for autoscale deployment (required for backend Express server)
-- Build command: `npm run build`
-- Run command: `bash -c "tsx server/index.ts & npx vite preview --host 0.0.0.0 --port 5000"`
-- Both backend (port 3001) and frontend (port 5000) servers run in production
-- **Note**: Cannot use Static Pages deployment due to backend media serving requirements
-
-## Clinic Information
-- **Address**: Carrer Verge de la Salut, 7, 08187 Santa Eulàlia de Ronçana, Barcelona
-- **Phone**: 938 446 939 (for appointments)
-- **Email**: vetcanpile@hotmail.es
-- **Hours**: 
-  - Monday & Thursday: 09:30–14:30, 17:00–19:30
-  - Tuesday, Wednesday, Friday: 09:30–14:30
-  - Saturday & Sunday: Closed
-- **Social Media**: 
-  - Instagram: @vetcanpile
-  - Facebook: Clínica Veterinària Can Pilé
-
-## Notes
-- This is a functional website with real clinic information
-- Media (images, videos) are served from Replit App Storage
-- Hero section features autoplay background video (hero.mp4)
-- All contact methods (phone, email) are clickable and functional
-- Text content is in Catalan
-- The design uses a neutral color scheme with responsive layout
-- Appointments are handled by phone only (no online booking form)
-
-## Next Steps to Complete Media Integration
-1. Create an App Storage bucket in Replit (Tools → Object Storage)
-2. Set the `PUBLIC_OBJECT_SEARCH_PATHS` environment variable to `/can-pile-media/Objects`
-3. Upload photos/videos from Google Drive to appropriate folders (within Objects/)
-4. Integrate MediaImage and MediaGallery components into CanPileWireframe
-5. Update mediaLibrary.json with actual filenames after upload
-
-## Important: App Storage File Structure
-- Replit App Storage automatically creates an `Objects` folder within your bucket
-- All files should be uploaded to subfolders inside `Objects/`
-- Example path: `can-pile-media/Objects/logos/Logo-blanc.webp`
+- **Vite**: Build tool for frontend development.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **React Router DOM**: Library for client-side routing.
+- **Express**: Node.js framework used for the backend server to serve media from App Storage.
+- **Replit App Storage**: Google Cloud Storage-based service for storing and serving media assets (images, videos).
