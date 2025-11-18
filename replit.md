@@ -176,9 +176,11 @@ The website includes the following sections:
 - React components automatically fetch and display media from storage
 
 ### Deployment
-- Configured for autoscale deployment
+- Configured for autoscale deployment (required for backend Express server)
 - Build command: `npm run build`
-- Run command: `npx vite preview --host 0.0.0.0 --port 5000`
+- Run command: `bash -c "tsx server/index.ts & npx vite preview --host 0.0.0.0 --port 5000"`
+- Both backend (port 3001) and frontend (port 5000) servers run in production
+- **Note**: Cannot use Static Pages deployment due to backend media serving requirements
 
 ## Clinic Information
 - **Address**: Carrer Verge de la Salut, 7, 08187 Santa Eulàlia de Ronçana, Barcelona
