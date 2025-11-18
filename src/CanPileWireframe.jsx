@@ -84,12 +84,11 @@ export default function CanPileWireframe() {
             <span className="font-semibold tracking-wide text-white">{t.header.brand}</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-white">
-            <a href="#hero" className="hover:underline">{t.nav.home}</a>
+            <a href="#hours" className="hover:underline">{t.nav.hours}</a>
             <a href="#services" className="hover:underline">{t.nav.services}</a>
             <a href="#gallery" className="hover:underline">{t.nav.gallery}</a>
             <a href="#team" className="hover:underline">{t.nav.team}</a>
             <a href="#contact" className="hover:underline">{t.nav.contact}</a>
-            <a href="#hours" className="hover:underline">{t.nav.hours}</a>
             <div className="flex items-center gap-3 ml-2 pl-4 border-l border-white/30">
               <a href="https://www.instagram.com/vetcanpile/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
