@@ -85,11 +85,11 @@ export default function CanPileWireframe() {
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-white">
             <a href="#hero" className="hover:underline">{t.nav.home}</a>
-            <a href="#hours" className="hover:underline">{t.nav.hours}</a>
-            <a href="#services" className="hover:underline">{t.nav.services}</a>
-            <a href="#gallery" className="hover:underline">{t.nav.gallery}</a>
-            <a href="#team" className="hover:underline">{t.nav.team}</a>
-            <a href="#contact" className="hover:underline">{t.nav.contact}</a>
+            <a href="#horario" className="hover:underline">{t.nav.hours}</a>
+            <a href="#servicios" className="hover:underline">{t.nav.services}</a>
+            <a href="#galeria" className="hover:underline">{t.nav.gallery}</a>
+            <a href="#equipo" className="hover:underline">{t.nav.team}</a>
+            <a href="#contacto" className="hover:underline">{t.nav.contact}</a>
             <div className="flex items-center gap-3 ml-2 pl-4 border-l border-white/30">
               <a href="https://www.instagram.com/vetcanpile/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity" aria-label="Instagram">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -167,7 +167,7 @@ export default function CanPileWireframe() {
                   </svg>
                   {t.hero.ctaPhone}
                 </a>
-                <a href="#about" className="px-5 py-3 rounded-xl border-2 border-white text-white text-sm hover:bg-white hover:text-[#227461] transition-colors shadow-lg inline-block">
+                <a href="#sobre-nosotros" className="px-5 py-3 rounded-xl border-2 border-white text-white text-sm hover:bg-white hover:text-[#227461] transition-colors shadow-lg inline-block">
                   {t.hero.ctaAbout}
                 </a>
               </div>
@@ -177,7 +177,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Hours & Location */}
-      <section id="hours" className="py-16 bg-white border-y scroll-mt-20">
+      <section id="horario" className="py-16 bg-white border-y scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.title}</h2>
@@ -239,17 +239,17 @@ export default function CanPileWireframe() {
             className="aspect-[4/3] rounded-2xl object-cover w-full"
           />
           <div>
-            <h2 id="about" className="text-2xl md:text-3xl font-semibold scroll-mt-24">{t.about.title}</h2>
+            <h2 id="sobre-nosotros" className="text-2xl md:text-3xl font-semibold scroll-mt-24">{t.about.title}</h2>
             <p className="mt-3 text-neutral-600">{t.about.intro}</p>
             <div className="mt-5">
-              <a href="#team" className="text-[#227461] underline hover:text-[#1a5a4a]">{t.about.cta}</a>
+              <a href="#equipo" className="text-[#227461] underline hover:text-[#1a5a4a]">{t.about.cta}</a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services */}
-      <section id="services" className="py-16 bg-white border-y scroll-mt-20">
+      <section id="servicios" className="py-16 bg-white border-y scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">{t.services.title}</h2>
           <p className="mt-3 text-neutral-600 max-w-3xl">{t.services.subtitle}</p>
@@ -278,7 +278,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Gallery / Media */}
-      <section id="gallery" className="py-16 scroll-mt-20">
+      <section id="galeria" className="py-16 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">{t.gallery.title}</h2>
           <div className="mt-3 flex flex-col sm:flex-row sm:items-center gap-3">
@@ -388,7 +388,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Team */}
-      <section id="team" className="py-16 bg-white border-y scroll-mt-20">
+      <section id="equipo" className="py-16 bg-white border-y scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold">{t.team.title}</h2>
           <div className="mt-8 grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -431,7 +431,7 @@ export default function CanPileWireframe() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16 scroll-mt-20">
+      <section id="contacto" className="py-16 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-semibold text-center">{t.contact.title}</h2>
           <p className="mt-3 text-neutral-600 text-center max-w-2xl mx-auto">
@@ -490,16 +490,16 @@ export default function CanPileWireframe() {
           <div>
             <p className="font-semibold mb-2">{t.footer.clinic}</p>
             <ul className="space-y-1 text-neutral-600">
-              <li><a href="#about" className="hover:underline">{t.footer.about}</a></li>
-              <li><a href="#services" className="hover:underline">{t.footer.services}</a></li>
-              <li><a href="#team" className="hover:underline">{t.footer.team}</a></li>
+              <li><a href="#sobre-nosotros" className="hover:underline">{t.footer.about}</a></li>
+              <li><a href="#servicios" className="hover:underline">{t.footer.services}</a></li>
+              <li><a href="#equipo" className="hover:underline">{t.footer.team}</a></li>
             </ul>
           </div>
           <div>
             <p className="font-semibold mb-2">{t.footer.support}</p>
             <ul className="space-y-1 text-neutral-600">
-              <li><a href="#contact" className="hover:underline">{t.footer.contact}</a></li>
-              <li><a href="#hours" className="hover:underline">{t.footer.hours}</a></li>
+              <li><a href="#contacto" className="hover:underline">{t.footer.contact}</a></li>
+              <li><a href="#horario" className="hover:underline">{t.footer.hours}</a></li>
             </ul>
           </div>
           <div>
