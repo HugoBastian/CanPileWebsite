@@ -211,7 +211,7 @@ export default function CanPileWireframe() {
             <h2 className="text-2xl md:text-3xl font-semibold">{t.hours.location}</h2>
             <div className="mt-5 aspect-video rounded-2xl overflow-hidden border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.0!2d2.2321075!3d41.6414639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4c8a8b8a8b8a8%3A0x1234567890abcdef!2sCarrer%20Verge%20de%20la%20Salut%2C%207%2C%2008187%20Santa%20Eul%C3%A0lia%20de%20Ron%C3%A7ana%2C%20Barcelona%2C%20Spain!5e0!3m2!1sen!2ses!4v1729512000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.0!2d2.2295149!3d41.6414523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4c6b70b9f1745%3A0x736edd88f5d6f34!2sCl%C3%ADnica%20Veterin%C3%A0ria%20Can%20Pil%C3%A9!5e0!3m2!1sen!2ses!4v1729512000000"
                 width="100%"
                 height="100%"
                 style={{border:0}}
