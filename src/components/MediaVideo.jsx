@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 /**
  * Media Video Component
- * Displays a video from App Storage with controls
+ * Displays a video from static assets with controls
  */
 export function MediaVideo({ category, filename, className = "", mediaClassName = "w-full h-full object-cover", autoplay = false, muted = true, loop = false }) {
   const [hasError, setHasError] = useState(false);
 
-  const videoUrl = `/public-objects/${category}/${filename}`;
+  const videoUrl = `/assets/${category}/${filename}`;
 
   if (hasError) {
     return (

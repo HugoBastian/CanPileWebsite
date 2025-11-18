@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 /**
  * Media Image Component
- * Displays an image from App Storage with lazy loading and error handling
+ * Displays an image from static assets with lazy loading and error handling
  */
 export function MediaImage({ category, filename, alt, className = "", mediaClassName = "w-full h-full object-cover" }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-  const imageUrl = `/public-objects/${category}/${filename}`;
+  const imageUrl = `/assets/${category}/${filename}`;
 
   if (hasError) {
     return (
