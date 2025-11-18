@@ -298,11 +298,11 @@ export default function CanPileWireframe() {
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { type: "image", category: "gallery", filename: "PerroFeliz.webp" },
-              { type: "image", category: "gallery", filename: "can pile perro en despacho.webp" },
+              { type: "image", category: "team", filename: "EsterConFloresYPerro.webp" },
               { type: "image", category: "team", filename: "DanaConGato.webp" },
               { type: "image", category: "gallery", filename: "recepciocanpile.webp" },
               { type: "image", category: "team", filename: "EstarDianaPerro.webp" },
-              { type: "image", category: "team", filename: "EsterConFloresYPerro.webp" },
+              { type: "image", category: "gallery", filename: "can pile perro en despacho.webp" },
               { type: "image", category: "gallery", filename: "PerroFeliz2.webp" },
               { type: "video", category: "gallery", filename: "BrownLabVid.MP4.webm" }
             ].map((item, i) => (
