@@ -84,6 +84,7 @@ export default function CanPileWireframe() {
             <span className="font-semibold tracking-wide text-white">{t.header.brand}</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-white">
+            <a href="#hero" className="hover:underline">{t.nav.home}</a>
             <a href="#hours" className="hover:underline">{t.nav.hours}</a>
             <a href="#services" className="hover:underline">{t.nav.services}</a>
             <a href="#gallery" className="hover:underline">{t.nav.gallery}</a>
